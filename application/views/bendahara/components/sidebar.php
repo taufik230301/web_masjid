@@ -43,13 +43,19 @@
                      <ul class="nav nav-treeview">
 
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?=base_url();?>Dashboard/view_bendahara" class="nav-link">
+                                 <i class="nav-icon fas fa-tachometer-alt"></i>
+                                 <p class="text">Dashboard</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="<?=base_url();?>Kas/view_bendahara" class="nav-link">
                                  <i class="nav-icon fas fa-book"></i>
                                  <p>Kas</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?=base_url();?>Iuran/view_bendahara" class="nav-link">
                                  <i class="nav-icon fas fa-columns"></i>
                                  <p>Iuran</p>
                              </a>
