@@ -61,21 +61,19 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?=base_url();?>Lengkapi_Data/view_anggota" class="nav-link">
                                  <i class="nav-icon fas fa-columns"></i>
                                  <p>Lengkapi Data</p>
                              </a>
                          </li>
-                         
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?=base_url();?>Cetak/kartu_anggota" class="nav-link">
                                  <i class="nav-icon fas fa-users"></i>
                                  <p>Cetak Kartu Anggota</p>
                              </a>
                          </li>
-
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?=base_url();?>Inventory/view_anggota" class="nav-link">
                                  <i class="nav-icon fas fa-th"></i>
                                  <p>Inventory</p>
                              </a>

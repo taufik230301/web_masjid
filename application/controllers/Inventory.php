@@ -7,5 +7,10 @@ class Inventory extends CI_Controller {
 	{
 		$this->load->view('admin/inventory');
     }
+
+    public function view_anggota()
+	{
+		$this->load->view('anggota/inventory');
+    }
 	
 }
