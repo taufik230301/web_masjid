@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view('admin/components/header');?>
+    <?php $this->load->view('anggota/components/header');?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -14,9 +14,9 @@
                 alt="AdminLTELogo" height="60" width="60">
         </div>
 
-        <?php $this->load->view('admin/components/navbar');?>
+        <?php $this->load->view('anggota/components/navbar');?>
 
-        <?php $this->load->view('admin/components/sidebar');?>
+        <?php $this->load->view('anggota/components/sidebar');?>
 
 
 
@@ -90,7 +90,7 @@
             <!-- /.content -->
             <!-- /.content -->
         </div>
-      
+        
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -100,7 +100,7 @@
     </div>
     <!-- ./wrapper -->
 
-    <?php $this->load->view('admin/components/js');?>
+    <?php $this->load->view('anggota/components/js');?>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view('admin/components/header');?>
+    <?php $this->load->view('anggota/components/header');?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -14,9 +14,9 @@
                 alt="AdminLTELogo" height="60" width="60">
         </div>
 
-        <?php $this->load->view('admin/components/navbar');?>
+        <?php $this->load->view('anggota/components/navbar');?>
 
-        <?php $this->load->view('admin/components/sidebar');?>
+        <?php $this->load->view('anggota/components/sidebar');?>
 
 
 
@@ -27,12 +27,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Kas</h1>
+                            <h1 class="m-0">Iuran</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Kas</li>
+                                <li class="breadcrumb-item active">Iuran</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -50,7 +50,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Data Kas</h3>
+                                    <h3 class="card-title">Data Iuran</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -58,10 +58,11 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Jenis Kas</th>
-                                                <th>Nominal</th>
-                                                <th>Keterangan Kas</th>
-                                                <th>Tanggal Transaksi</th>
+                                                <th>Nama</th>
+                                                <th>Bulan</th>
+                                                <th>Tahun</th>
+                                                <th>Tanggal Iuran</th>
+                                                <th>Jumlah Iuran</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -71,6 +72,7 @@
                                                 </td>
                                                 <td>Win 95+</td>
                                                 <td> 4</td>
+                                                <td>X</td>
                                                 <td>X</td>
                                             </tr>
                                         </tbody>
@@ -90,7 +92,14 @@
             <!-- /.content -->
             <!-- /.content -->
         </div>
-      
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 3.2.0
+            </div>
+        </footer>
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -100,7 +109,7 @@
     </div>
     <!-- ./wrapper -->
 
-    <?php $this->load->view('admin/components/js');?>
+    <?php $this->load->view('anggota/components/js');?>
 </body>
 
 </html>
