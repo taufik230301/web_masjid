@@ -43,50 +43,50 @@
                      <ul class="nav nav-treeview">
 
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?=base_url();?>Dashboard/view_admin" class="nav-link">
                                  <i class="nav-icon fas fa-tachometer-alt"></i>
                                  <p class="text">Dashboard</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?=base_url();?>Kas/view_admin" class="nav-link">
                                  <i class="nav-icon fas fa-book"></i>
                                  <p>Kas</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?=base_url();?>Iuran/view_admin" class="nav-link">
                                  <i class="nav-icon fas fa-columns"></i>
                                  <p>Iuran</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?=base_url();?>Berita/view_admin" class="nav-link">
                                  <i class="nav-icon fas fa-info"></i>
                                  <p>Info Berita</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?=base_url();?>Kematian/view_admin" class="nav-link">
                                  <i class="nav-icon fas fa-table"></i>
                                  <p>Info Kematian</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?=base_url();?>Pengurus/view_admin" class="nav-link">
                                  <i class="nav-icon fas fa-users"></i>
                                  <p>Pengurus</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?=base_url();?>Anggota/view_admin" class="nav-link">
                                  <i class="nav-icon fas fa-users"></i>
                                  <p>Anggota</p>
                              </a>
                          </li>
 
                          <li class="nav-item">
-                             <a href="#" class="nav-link">
+                             <a href="<?=base_url();?>Inventory/view_admin" class="nav-link">
                                  <i class="nav-icon fas fa-th"></i>
                                  <p>Inventory</p>
                              </a>
