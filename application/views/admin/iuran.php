@@ -32,7 +32,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Kas</li>
+                                <li class="breadcrumb-item active">Iuran</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -50,7 +50,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Data Kas</h3>
+                                    <h3 class="card-title">Data Iuran</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -58,10 +58,11 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Jenis Kas</th>
-                                                <th>Nominal</th>
-                                                <th>Keterangan Kas</th>
-                                                <th>Tanggal Transaksi</th>
+                                                <th>Nama</th>
+                                                <th>Bulan</th>
+                                                <th>Tahun</th>
+                                                <th>Tanggal Iuran</th>
+                                                <th>Jumlah Iuran</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -71,6 +72,7 @@
                                                 </td>
                                                 <td>Win 95+</td>
                                                 <td> 4</td>
+                                                <td>X</td>
                                                 <td>X</td>
                                             </tr>
                                         </tbody>
