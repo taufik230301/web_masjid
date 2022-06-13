@@ -45,7 +45,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-                           
+
                             <!-- /.card -->
 
                             <div class="card">
@@ -64,6 +64,7 @@
                                                 <th>Jumlah</th>
                                                 <th>Kondisi Barang</th>
                                                 <th>Tanggal Masuk</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -76,9 +77,29 @@
                                                 <td>X</td>
                                                 <td>X</td>
                                                 <td>X</td>
+                                                <td>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-primary" data-toggle="modal"
+                                                                data-target="#ubah_inventory">
+                                                                Edit <i class="nav-icon fas fa-edit"></i>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" data-toggle="modal"
+                                                                data-target="#delete_inventory"
+                                                                class="btn btn-danger">Hapus <i
+                                                                    class="fas fa-trash"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         </tbody>
-                                       
+
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
