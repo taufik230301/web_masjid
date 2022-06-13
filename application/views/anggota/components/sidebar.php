@@ -56,32 +56,21 @@
                          </li>
                          <li class="nav-item">
                              <a href="#" class="nav-link">
-                                 <i class="nav-icon fas fa-columns"></i>
+                                 <i class="nav-icon fas fa-info"></i>
                                  <p>Iuran</p>
                              </a>
                          </li>
                          <li class="nav-item">
                              <a href="#" class="nav-link">
-                                 <i class="nav-icon fas fa-info"></i>
-                                 <p>Info Berita</p>
+                                 <i class="nav-icon fas fa-columns"></i>
+                                 <p>Lengkapi Data</p>
                              </a>
                          </li>
-                         <li class="nav-item">
-                             <a href="#" class="nav-link">
-                                 <i class="nav-icon fas fa-table"></i>
-                                 <p>Info Kematian</p>
-                             </a>
-                         </li>
+                         
                          <li class="nav-item">
                              <a href="#" class="nav-link">
                                  <i class="nav-icon fas fa-users"></i>
-                                 <p>Pengurus</p>
-                             </a>
-                         </li>
-                         <li class="nav-item">
-                             <a href="#" class="nav-link">
-                                 <i class="nav-icon fas fa-users"></i>
-                                 <p>Anggota</p>
+                                 <p>Cetak Kartu Anggota</p>
                              </a>
                          </li>
 
