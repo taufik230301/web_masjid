@@ -50,14 +50,45 @@
                          </li>
                          <li class="nav-item">
                              <a href="#" class="nav-link">
-                                 <i class="nav-icon far fa-circle text-warning"></i>
-                                 <p>Warning</p>
+                                 <i class="nav-icon fas fa-book"></i>
+                                 <p>Kas</p>
                              </a>
                          </li>
                          <li class="nav-item">
                              <a href="#" class="nav-link">
-                                 <i class="nav-icon far fa-circle text-info"></i>
-                                 <p>Informational</p>
+                                 <i class="nav-icon fas fa-columns"></i>
+                                 <p>Iuran</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="#" class="nav-link">
+                                 <i class="nav-icon fas fa-info"></i>
+                                 <p>Info Berita</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="#" class="nav-link">
+                                 <i class="nav-icon fas fa-table"></i>
+                                 <p>Info Kematian</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="#" class="nav-link">
+                                 <i class="nav-icon fas fa-users"></i>
+                                 <p>Pengurus</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="#" class="nav-link">
+                                 <i class="nav-icon fas fa-users"></i>
+                                 <p>Anggota</p>
+                             </a>
+                         </li>
+
+                         <li class="nav-item">
+                             <a href="#" class="nav-link">
+                                 <i class="nav-icon fas fa-th"></i>
+                                 <p>Inventory</p>
                              </a>
                          </li>
                      </ul>
