@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +11,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <title>Sign Up Form by Colorlib</title>
 
     <!-- Font Icon -->
-    <link rel="stylesheet" href="<?=base_url();?>assets/login/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet"
+        href="<?=base_url();?>assets/login/fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
     <link rel="stylesheet" href="<?=base_url();?>assets/login/css/style.css">
+
+    <!-- Sweetalert -->
+    <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </head>
+
 <body>
+    <?php if ($this->session->flashdata('password_err')){ ?>
+    <script>
+    swal({
+        title: "Error Password!",
+        text: "Ketik Ulang Password!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_daftar')){ ?>
+    <script>
+    swal({
+        title: "Error Daftar!",
+        text: "Silahkan Anda Mendaftar Ulang!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
 
     <div class="main">
 
@@ -24,25 +50,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Daftar</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <form method="POST" class="register-form" id="register-form"
+                            action="<?=base_url();?>Register/proses_register">
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name"/>
+                                <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="username" id="username" placeholder="Your Username" />
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                                <input type="email" name="email" id="email" placeholder="Your Email" />
                             </div>
                             <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                                <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="password" placeholder="Password" />
                             </div>
                             <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
+                                <label for="re_password"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="re_password" id="re_password"
+                                    placeholder="Repeat your password" />
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
                             </div>
                         </form>
                     </div>
@@ -61,4 +89,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?=base_url();?>assets/login/vendor/jquery/jquery.min.js"></script>
     <script src="<?=base_url();?>assets/login/js/main.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
 </html>

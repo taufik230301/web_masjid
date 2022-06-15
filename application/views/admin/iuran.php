@@ -45,7 +45,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-                           
+
                             <!-- /.card -->
 
                             <div class="card">
@@ -63,6 +63,7 @@
                                                 <th>Tahun</th>
                                                 <th>Tanggal Iuran</th>
                                                 <th>Jumlah Iuran</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -74,9 +75,55 @@
                                                 <td> 4</td>
                                                 <td>X</td>
                                                 <td>X</td>
+                                                <td>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-primary" data-toggle="modal"
+                                                                data-target="#ubah_iuran">
+                                                                Edit <i class="nav-icon fas fa-edit"></i>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" data-toggle="modal" data-target="#delete_iuran"
+                                                                class="btn btn-danger">Hapus <i
+                                                                    class="fas fa-trash"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="ubah_iuran" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Ubah
+                                                                    Data
+                                                                    Iuran
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                ...
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary">Save
+                                                                    changes</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </tr>
                                         </tbody>
-                                       
+
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
@@ -88,6 +135,30 @@
                     <!-- /.row -->
                 </div>
                 <!-- /.container-fluid -->
+                <!-- Modal -->
+                <div class="modal fade" id="delete_iuran" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete Data
+                                    Iuran
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save
+                                    changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <!-- /.content -->
             <!-- /.content -->

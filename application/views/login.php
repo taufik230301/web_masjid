@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,16 +11,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <title>Sign Up Form by Colorlib</title>
 
     <!-- Font Icon -->
-    <link rel="stylesheet" href="<?=base_url();?>assets/login/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet"
+        href="<?=base_url();?>assets/login/fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
     <link rel="stylesheet" href="<?=base_url();?>assets/login/css/style.css">
+
+    <!-- Sweetalert -->
+    <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </head>
+
 <body>
 
+    <?php if ($this->session->flashdata('daftar')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Terdaftar!",
+        text: "Silahkan Anda Login!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    
     <div class="main">
 
-      
+
 
         <!-- Sing in  Form -->
         <section class="sign-in">
@@ -34,14 +51,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>
+                                <input type="text" name="your_name" id="your_name" placeholder="Your Name" />
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                                <input type="password" name="your_pass" id="your_pass" placeholder="Password" />
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
                             </div>
                         </form>
                     </div>
@@ -55,4 +72,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?=base_url();?>assets/login/vendor/jquery/jquery.min.js"></script>
     <script src="<?=base_url();?>assets/login/js/main.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
 </html>
