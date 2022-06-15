@@ -6,18 +6,28 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('success_login')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Login!",
+        text: "Anda Behasil Login!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/AdminLTELogo.png"
+                alt="AdminLTELogo" height="60" width="60">
         </div>
 
         <?php $this->load->view('bendahara/components/navbar');?>
 
         <?php $this->load->view('bendahara/components/sidebar');?>
 
-       
+
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -110,13 +120,13 @@
                         <!-- ./col -->
                     </div>
                     <!-- /.row -->
-                   
+
                 </div><!-- /.container-fluid -->
             </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-       
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

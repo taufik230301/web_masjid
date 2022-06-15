@@ -32,7 +32,6 @@ class Login extends CI_Controller {
 					$this->session->set_userdata('id_user', $user['id_user']);
 					$this->session->set_userdata('username', $user['username']);
 					$this->session->set_userdata('id_user_level', $user['id_user_level']);
-					$this->session->set_userdata('nama_lengkap', $user['nama_lengkap']);
 					
 					redirect('Dashboard/view_admin');
 	
