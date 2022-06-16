@@ -2,7 +2,7 @@
  <aside class="main-sidebar sidebar-dark-primary elevation-4">
      <!-- Brand Logo -->
      <a href="index3.html" class="brand-link">
-         <img src="<?=base_Url();?>assets/admin_lte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+         <img src="<?=base_Url();?>assets/logo_masjid.png" alt="AdminLTE Logo"
              class="brand-image img-circle elevation-3" style="opacity: .8">
          <span class="brand-text font-weight-light">SISPAMAL-26</span>
      </a>
