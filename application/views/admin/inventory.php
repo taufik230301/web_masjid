@@ -6,6 +6,25 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Ditambahakan!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -79,6 +98,7 @@
                                             foreach($inventory as $i)
                                             :
                                             $id++;
+                                            $id_inventory = $i['id_inventory'];
                                             $nama_inventory = $i['nama_inventory'];
                                             $merk = $i['merk'];
                                             $satuan = $i['satuan'];
@@ -198,30 +218,46 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form action="<?=base_url();?>Inventory/tambah_inventory" method="POST">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp">
-                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email
-                                            with anyone else.</small>
+                                        <label for="nama_inventory">Nama Inventory</label>
+                                        <input type="text" class="form-control" id="nama_inventory"
+                                            name="nama_inventory" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                        <label for="merk">Merk</label>
+                                        <input type="text" class="form-control" id="merk" name="merk" required>
                                     </div>
-                                    <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                    <div class="form-group">
+                                        <label for="satuan">Satuan</label>
+                                        <select class="form-control" id="satuan" name="satuan" required>
+                                            <option value="Lembar">Lembar</option>
+                                            <option value="Buah">Buah</option>
+                                            <option value="Kodi">Kodi</option>
+                                            <option value="Lusin">Lusin</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jumlah">Jumlah</label>
+                                        <input type="number" class="form-control" id="jumlah" name="jumlah" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="kondisi_barang">Kondisi Barang</label>
+                                        <select class="form-control" id="kondisi_barang" name="kondisi_barang" required>
+                                            <option value="Tidak Baik">Tidak Baik</option>
+                                            <option value="Sedang">Sedang</option>
+                                            <option value="Amat Baik">Amat Baik</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tanggal_masuk">Tanggal Masuk</label>
+                                        <input type="date" class="form-control" id="tanggal_masuk" name="tanggal_masuk"
+                                            required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save
-                                    changes</button>
-                            </div>
+
                         </div>
                     </div>
                 </div>
