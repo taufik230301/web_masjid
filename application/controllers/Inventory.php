@@ -42,7 +42,7 @@ class Inventory extends CI_Controller {
 		// echo var_dump($kondisi_barang);
 		// echo var_dump($tanggal_masuk);
 		// die();
-		$hasil = $this->m_inventory->insert_inventory($nama_inventory, $merk, $satuan, $jumlah, $kondisi_barang);
+		$hasil = $this->m_inventory->insert_inventory($nama_inventory, $merk, $satuan, $jumlah, $kondisi_barang, $tanggal_masuk);
 
         if($hasil==false){
                 $this->session->set_flashdata('eror_input','eror_input');
@@ -64,19 +64,40 @@ class Inventory extends CI_Controller {
 		$kondisi_barang= $this->input->post('kondisi_barang');
 		$tanggal_masuk= $this->input->post('tanggal_masuk');
 
-		echo var_dump($id_inventory);
-		echo var_dump($nama_inventory);
-		echo var_dump($merk);
-		echo var_dump($satuan);
-		echo var_dump($jumlah);
-		echo var_dump($kondisi_barang);
-		echo var_dump($tanggal_masuk);
-		die();
+		// echo var_dump($id_inventory);
+		// echo var_dump($nama_inventory);
+		// echo var_dump($merk);
+		// echo var_dump($satuan);
+		// echo var_dump($jumlah);
+		// echo var_dump($kondisi_barang);
+		// echo var_dump($tanggal_masuk);
+		// die();
+
+		$hasil = $this->m_inventory->update_inventory($nama_inventory, $merk, $satuan, $jumlah, $kondisi_barang, $tanggal_masuk, $id_inventory);
+
+        if($hasil==false){
+                $this->session->set_flashdata('eror_edit','eror_edit');
+                redirect('Inventory/view_admin');
+        }else{
+          		$this->session->set_flashdata('edit','edit');
+         		 redirect('Inventory/view_admin');
+        }
 	}
 
 	public function hapus_inventory()
 	{
+		$id_inventory = $this->input->post('id_inventory');
+
 		
+		$hasil = $this->m_inventory->delete_inventory($id_inventory);
+
+        if($hasil==false){
+                $this->session->set_flashdata('eror_delete','eror_delete');
+                redirect('Inventory/view_admin');
+        }else{
+          		$this->session->set_flashdata('delete','delete');
+         		 redirect('Inventory/view_admin');
+        }
 	}
 
     public function view_anggota()

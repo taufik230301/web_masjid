@@ -3,11 +3,11 @@
 class M_inventory extends CI_Model
 {
 
-    public function insert_inventory($nama_inventory, $merk, $satuan, $jumlah, $kondisi_barang)
+    public function insert_inventory($nama_inventory, $merk, $satuan, $jumlah, $kondisi_barang, $tanggal_masuk)
     {
         $this->db->trans_start();
 
-       $this->db->query("INSERT INTO inventory(nama_inventory, merk, satuan, jumlah, kondisi_barang) VALUES ('$nama_inventory','$merk','$satuan','$jumlah','$kondisi_barang')");
+       $this->db->query("INSERT INTO inventory(nama_inventory, merk, satuan, jumlah, kondisi_barang, tanggal_masuk) VALUES ('$nama_inventory','$merk','$satuan','$jumlah','$kondisi_barang','$tanggal_masuk')");
 
        $this->db->trans_complete();
         if($this->db->trans_status()==true)
@@ -16,11 +16,11 @@ class M_inventory extends CI_Model
             return false;
     }
 
-    public function update_inventory($nama_inventory, $merk, $satuan, $jumlah, $kondisi_barang, $id_inventory)
+    public function update_inventory($nama_inventory, $merk, $satuan, $jumlah, $kondisi_barang, $tanggal_masuk, $id_inventory)
     {
         $this->db->trans_start();
 
-       $this->db->query("UPDATE inventory SET nama_inventory='$nama_inventory', merk='$merk', satuan='$satuan', jumlah='$jumlah', kondisi_barang='$kondisi_barang' WHERE id_inventory='$id_inventory'");
+       $this->db->query("UPDATE inventory SET nama_inventory='$nama_inventory', merk='$merk', satuan='$satuan', jumlah='$jumlah', kondisi_barang='$kondisi_barang', tanggal_masuk='$tanggal_masuk' WHERE id_inventory='$id_inventory'");
 
        $this->db->trans_complete();
         if($this->db->trans_status()==true)

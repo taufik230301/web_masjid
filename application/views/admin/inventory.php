@@ -25,6 +25,46 @@
     });
     </script>
     <?php } ?>
+
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diedit!",
+        text: "Data Berhasil Diedit!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_edit')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('delete')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Didelete!",
+        text: "Data Berhasil Didelete!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_delete')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -156,7 +196,8 @@
                                                         <div class="modal-body">
                                                             <form action="<?=base_url();?>Inventory/ubah_inventory"
                                                                 method="POST">
-                                                                <input type="text" value="<?=$id_inventory?>" name="id_inventory" hidden>
+                                                                <input type="text" value="<?=$id_inventory?>"
+                                                                    name="id_inventory" hidden>
                                                                 <div class="form-group">
                                                                     <label for="nama_inventory">Nama Inventory</label>
                                                                     <input type="text" class="form-control"
@@ -166,14 +207,12 @@
                                                                 <div class="form-group">
                                                                     <label for="merk">Merk</label>
                                                                     <input type="text" class="form-control" id="merk"
-                                                                        name="merk" value="<?=$merk?>"
-                                                                        required>
+                                                                        name="merk" value="<?=$merk?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="satuan">Satuan</label>
                                                                     <select class="form-control" id="satuan"
-                                                                        name="satuan" 
-                                                                        required>
+                                                                        name="satuan" required>
                                                                         <option value="Lembar" <?php  if($satuan == 'Lembar'){
                                                                                             echo 'selected';
                                                                                         }else{
@@ -250,14 +289,26 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            ...
+                                                            <form action="<?= base_url();?>Inventory/hapus_inventory"
+                                                                method="post" enctype="multipart/form-data">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <input type="hidden" name="id_inventory"
+                                                                            value="<?php echo $id_inventory?>" />
+
+                                                                        <p>Apakah kamu yakin ingin menghapus data
+                                                                            ini?</i></b></p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger ripple"
+                                                                        data-dismiss="modal">Tidak</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-success ripple save-category">Ya</button>
+                                                                </div>
+                                                            </form>
                                                         </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save
-                                                                changes</button>
-                                                        </div>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
