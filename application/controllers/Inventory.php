@@ -13,7 +13,7 @@ class Inventory extends CI_Controller {
 	{
 		$data['inventory'] = $this->m_inventory->read_all_inventory()->result_array();
 
-		$this->load->view('admin/inventory');
+		$this->load->view('admin/inventory', $data);
 
     }
 
@@ -21,7 +21,7 @@ class Inventory extends CI_Controller {
 	{
 		$data['inventory'] = $this->m_inventory->read_all_inventory()->result_array();
 
-		$this->load->view('anggota/inventory');
+		$this->load->view('anggota/inventory', $data);
     }
 	
 }

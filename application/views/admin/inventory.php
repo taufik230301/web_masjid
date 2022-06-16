@@ -34,7 +34,13 @@
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active">Inventory</li>
                             </ol>
+
                         </div><!-- /.col -->
+                        <button type="button" class="btn btn-primary ml-2 mt-3" data-toggle="modal"
+                            data-target="#tambah_inventory">
+                            Tambah Data Inventory
+                        </button>
+
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -68,15 +74,29 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            $id = 0;
+                                            foreach($inventory as $i)
+                                            :
+                                            $id++;
+                                            $nama_inventory = $i['nama_inventory'];
+                                            $merk = $i['merk'];
+                                            $satuan = $i['satuan'];
+                                            $jumlah = $i['jumlah'];
+                                            $kondisi_barang = $i['kondisi_barang'];
+                                            $tanggal_masuk = $i['tanggal_masuk'];
+                                          
+
+                                            ?>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0
+                                                <td><?=$id?></td>
+                                                <td><?=$nama_inventory?>
                                                 </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td>X</td>
-                                                <td>X</td>
+                                                <td><?=$merk?></td>
+                                                <td><?=$satuan?></td>
+                                                <td><?=$jumlah?></td>
+                                                <td><?=$kondisi_barang?></td>
+                                                <td><?=$tanggal_masuk?></td>
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
@@ -98,13 +118,15 @@
                                                     </div>
                                                 </td>
                                             </tr>
+
                                             <!-- Modal -->
                                             <div class="modal fade" id="ubah_inventory" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Ubah Data Inventory
+                                                            <h5 class="modal-title" id="exampleModalLabel">Ubah Data
+                                                                Inventory
                                                             </h5>
                                                             <button type="button" class="close" data-dismiss="modal"
                                                                 aria-label="Close">
@@ -123,6 +145,33 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="delete_inventory" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Hapus Data
+                                                                Inventory</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            ...
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save
+                                                                changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.container-fluid -->
+                                            <?php endforeach; ?>
                                         </tbody>
 
                                     </table>
@@ -136,27 +185,47 @@
                     <!-- /.row -->
                 </div>
                 <!-- Modal -->
-                <div class="modal fade" id="delete_inventory" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="tambah_inventory" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Hapus Data Inventory</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Tambah Data
+                                    Inventory
+                                </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                ...
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp">
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email
+                                            with anyone else.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-primary">Save
+                                    changes</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- /.container-fluid -->
+
             </section>
             <!-- /.content -->
             <!-- /.content -->
