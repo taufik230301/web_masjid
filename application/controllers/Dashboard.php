@@ -13,15 +13,25 @@ class Dashboard extends CI_Controller {
 		}else{
 
 			$this->session->set_flashdata('loggin_err','loggin_err');
-			redirect('Login/login_user');
+			redirect('Login/index');
 
 		}
 
     }
     
-    public function view_bendahara()
+	public function view_bendahara()
+	
 	{
-		$this->load->view('bendahara/dashboard.php');
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
+
+			$this->load->view('bendahara/dashboard.php');
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
     }
     
     public function view_anggota()

@@ -57,7 +57,7 @@ class Login extends CI_Controller {
 					redirect('Dashboard/view_anggota');
 	
 				}else{
-					$this->session->set_flashdata('loggin_err','loggin_err');
+					$this->session->set_flashdata('loggin_err_no_access','loggin_err_no_access');
 					redirect('Login/index');
 				}
 

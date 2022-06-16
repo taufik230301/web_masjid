@@ -23,6 +23,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
 
+    <?php if($this->session->flashdata('loggin_err_pass')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Password Yang Anda Masukan Salah!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if($this->session->flashdata('loggin_err_no_access')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Anda Belum Memiliki Akses!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if($this->session->flashdata('loggin_err_no_user')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Anda Belum Terdaftar!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <?php if($this->session->flashdata('loggin_err')){?>
     <script>
     swal({
