@@ -76,11 +76,23 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            $id = 0;
+                                            foreach($anggota as $i)
+                                            :
+                                            $id++;
+                                            $id_user = $i['id_user'];
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $jabatan = $i['jabatan'];
+                                            
+                                          
+
+                                            ?>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0
+                                                <td><?=$id?></td>
+                                                <td><?=$nama_lengkap?>
                                                 </td>
-                                                <td>Win 95+</td>
+                                                <td><?=$jabatan?></td>
                                                 <td> 4</td>
                                                 <td>X</td>
                                                 <td>Trident</td>
@@ -141,6 +153,7 @@
                                                     </div>
                                                 </div>
                                             </tr>
+                                            <?php endforeach;?>
                                         </tbody>
 
                                     </table>
