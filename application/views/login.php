@@ -23,6 +23,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
 
+    <?php if($this->session->flashdata('loggin_err')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Sesi Anda Habis!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <?php if ($this->session->flashdata('daftar')){ ?>
     <script>
     swal({
@@ -48,7 +58,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form method="POST" class="register-form" id="login-form" action="<?=base_url();?>Login/proses_login">
+                        <form method="POST" class="register-form" id="login-form"
+                            action="<?=base_url();?>Login/proses_login">
                             <div class="form-group">
                                 <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="username" id="username" placeholder="Your Name" />

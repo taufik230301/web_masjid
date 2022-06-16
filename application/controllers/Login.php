@@ -33,6 +33,7 @@ class Login extends CI_Controller {
 					$this->session->set_userdata('username', $user['username']);
 					$this->session->set_userdata('id_user_level', $user['id_user_level']);
 					
+					$this->session->set_flashdata('success_login','success_login');
 					redirect('Dashboard/view_admin');
 	
 				}else if($user['id_user_level'] == 2){
@@ -42,6 +43,7 @@ class Login extends CI_Controller {
 					$this->session->set_userdata('username', $user['username']);
 					$this->session->set_userdata('id_user_level', $user['id_user_level']);
 	
+					$this->session->set_flashdata('success_login','success_login');
 					redirect('Dashboard/view_bendahara');
 	
 				}else if($user['id_user_level'] == 3){
@@ -51,6 +53,7 @@ class Login extends CI_Controller {
 					$this->session->set_userdata('username', $user['username']);
 					$this->session->set_userdata('id_user_level', $user['id_user_level']);
 	
+					$this->session->set_flashdata('success_login','success_login');
 					redirect('Dashboard/view_anggota');
 	
 				}else{

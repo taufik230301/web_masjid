@@ -5,7 +5,18 @@ class Dashboard extends CI_Controller {
 
 	public function view_admin()
 	{
-		$this->load->view('admin/dashboard.php');
+
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+
+			$this->load->view('admin/dashboard.php');
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/login_user');
+
+		}
+
     }
     
     public function view_bendahara()
