@@ -121,7 +121,7 @@
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" class="btn btn-primary" data-toggle="modal"
-                                                                data-target="#ubah_inventory">
+                                                                data-target="#ubah_inventory<?=$id_inventory?>">
                                                                 Edit <i class="nav-icon fas fa-edit"></i>
                                                             </a>
 
@@ -130,7 +130,7 @@
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" data-toggle="modal"
-                                                                data-target="#delete_inventory"
+                                                                data-target="#delete_inventory<?=$id_inventory?>"
                                                                 class="btn btn-danger">Hapus <i
                                                                     class="fas fa-trash"></i>
                                                             </a>
@@ -140,7 +140,7 @@
                                             </tr>
 
                                             <!-- Modal -->
-                                            <div class="modal fade" id="ubah_inventory" tabindex="-1"
+                                            <div class="modal fade" id="ubah_inventory<?=$id_inventory?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
@@ -154,20 +154,91 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            ...
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save
-                                                                changes</button>
+                                                            <form action="<?=base_url();?>Inventory/ubah_inventory"
+                                                                method="POST">
+                                                                <input type="text" value="<?=$id_inventory?>" name="id_inventory" hidden>
+                                                                <div class="form-group">
+                                                                    <label for="nama_inventory">Nama Inventory</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="nama_inventory" name="nama_inventory"
+                                                                        value="<?=$nama_inventory?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="merk">Merk</label>
+                                                                    <input type="text" class="form-control" id="merk"
+                                                                        name="merk" value="<?=$merk?>"
+                                                                        required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="satuan">Satuan</label>
+                                                                    <select class="form-control" id="satuan"
+                                                                        name="satuan" 
+                                                                        required>
+                                                                        <option value="Lembar" <?php  if($satuan == 'Lembar'){
+                                                                                            echo 'selected';
+                                                                                        }else{
+                                                                                            echo '';
+                                                                                        }  ?>>Lembar</option>
+                                                                        <option value="Buah" <?php  if($satuan == 'Buah'){
+                                                                                            echo 'selected';
+                                                                                        }else{
+                                                                                            echo '';
+                                                                                        }  ?>>Buah</option>
+                                                                        <option value="Kodi" <?php  if($satuan == 'Kodi'){
+                                                                                            echo 'selected';
+                                                                                        }else{
+                                                                                            echo '';
+                                                                                        }  ?>>Kodi</option>
+                                                                        <option value="Lusin" <?php  if($satuan == 'Lusin'){
+                                                                                            echo 'selected';
+                                                                                        }else{
+                                                                                            echo '';
+                                                                                        }  ?>>Lusin</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="jumlah">Jumlah</label>
+                                                                    <input type="number" class="form-control"
+                                                                        id="jumlah" name="jumlah" value="<?=$jumlah?>"
+                                                                        required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="kondisi_barang">Kondisi Barang</label>
+                                                                    <select class="form-control" id="kondisi_barang"
+                                                                        name="kondisi_barang" required>
+                                                                        <option value="Tidak Baik" <?php  if($kondisi_barang == 'Tidak Baik'){
+                                                                                            echo 'selected';
+                                                                                        }else{
+                                                                                            echo '';
+                                                                                        }  ?>>Tidak Baik</option>
+                                                                        <option value="Sedang" <?php  if($kondisi_barang == 'Sedang'){
+                                                                                            echo 'selected';
+                                                                                        }else{
+                                                                                            echo '';
+                                                                                        }  ?>>Sedang</option>
+                                                                        <option value="Amat Baik" <?php  if($kondisi_barang == 'Amat Baik'){
+                                                                                            echo 'selected';
+                                                                                        }else{
+                                                                                            echo '';
+                                                                                        }  ?>>Amat Baik</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="tanggal_masuk">Tanggal Masuk</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="tanggal_masuk" name="tanggal_masuk"
+                                                                        value="<?=$tanggal_masuk?>" required>
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!-- Modal -->
-                                            <div class="modal fade" id="delete_inventory" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="delete_inventory<?=$id_inventory?>"
+                                                tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">

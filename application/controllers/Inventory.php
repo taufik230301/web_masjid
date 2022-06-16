@@ -63,6 +63,15 @@ class Inventory extends CI_Controller {
 		$jumlah= $this->input->post('jumlah');
 		$kondisi_barang= $this->input->post('kondisi_barang');
 		$tanggal_masuk= $this->input->post('tanggal_masuk');
+
+		echo var_dump($id_inventory);
+		echo var_dump($nama_inventory);
+		echo var_dump($merk);
+		echo var_dump($satuan);
+		echo var_dump($jumlah);
+		echo var_dump($kondisi_barang);
+		echo var_dump($tanggal_masuk);
+		die();
 	}
 
 	public function hapus_inventory()
