@@ -36,7 +36,16 @@ class Dashboard extends CI_Controller {
     
     public function view_anggota()
 	{
-		$this->load->view('anggota/dashboard.php');
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
+			
+			$this->load->view('anggota/dashboard.php');
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
 	}
 	
 }
