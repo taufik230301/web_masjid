@@ -3,6 +3,8 @@
 
 <head>
     <?php $this->load->view('admin/components/header');?>
+
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -10,8 +12,8 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/Loading.png"
-                alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/Loading.png" alt="AdminLTELogo"
+                height="60" width="60">
         </div>
 
         <?php $this->load->view('admin/components/navbar');?>
@@ -35,6 +37,11 @@
                                 <li class="breadcrumb-item active">Info Kematian</li>
                             </ol>
                         </div><!-- /.col -->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary ml-2 mt-3" data-toggle="modal"
+                            data-target="#exampleModal">
+                            Tambah Data
+                        </button>
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -66,10 +73,22 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            $id = 0;
+                                            foreach($anggota_kematian as $i)
+                                            :
+                                            $id++;
+                                            $id_user = $i['id_user'];
+                                            
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            
+                                            
+                                          
+
+                                            ?>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0
-                                                </td>
+                                                <td><?=$id?></td>
+                                                <td><?=$nama_lengkap?></td>
                                                 <td>Win 95+</td>
                                                 <td> 4</td>
                                                 <td>X</td>
@@ -120,6 +139,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <?php endforeach;?>
                                         </tbody>
 
                                     </table>
@@ -134,25 +154,42 @@
                 </div>
                 <!-- /.container-fluid -->
                 <!-- Modal -->
-                <div class="modal fade" id="delete_kematian" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Delete Data
-                                    Kematian
-                                </h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Kematian</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save
-                                    changes</button>
+                                <form action="<?=base_url();?>Kematian/tambah_data_admin" method="POST">
+                                    <div class="form-group">
+                                        <label for="id_user">Anggota</label>
+                                        <select class="form-control" id="exampleFormControlSelect1" name="id_user">
+                                            <?php
+                                            $id = 0;
+                                            foreach($anggota_not_kematian as $i)
+                                            :
+                                            $id++;
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $id_user_detail = $i['id_user_detail'];
+                                            ?>
+                                            <option value="<?=$id_user_detail?>"><?=$nama_lengkap?></option>
+                                            <?php endforeach;?>
+
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tanggal_kematian">Tanggal Kematian</label>
+                                        <input type="date" class="form-control" id="tanggal_kematian"
+                                            name="tanggal_kematian">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -161,14 +198,6 @@
             <!-- /.content -->
             <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
-            </div>
-        </footer>
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

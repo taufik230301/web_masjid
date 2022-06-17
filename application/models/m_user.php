@@ -40,6 +40,26 @@ class M_user extends CI_Model
 
     }
 
+    public function read_all_anggota_not_kematian()
+    {
+
+        $hasil=$this->db->query("SELECT nama_lengkap, user_detail.id_user_detail FROM user 
+        JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail
+        LEFT JOIN kematian ON user.id_user = kematian.id_user WHERE id_user_level=3 AND nama_lengkap IS NOT NULL AND kematian.id_user IS NULL");
+        return $hasil;
+
+    }
+
+    public function read_all_anggota_kematian()
+    {
+
+        $hasil=$this->db->query("SELECT * FROM user 
+        JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail
+        JOIN kematian ON user.id_user = kematian.id_user WHERE id_user_level=3 AND nama_lengkap IS NOT NULL AND kematian.id_user IS NOT NULL");
+        return $hasil;
+
+    }
+
 
     public function insert_user($id, $username, $password, $email, $id_user_level, 
     $nama_lengkap, $jabatan, $no_kk, $no_ktp, $jenis_kelamin, $agama, $no_hp, $alamat,
