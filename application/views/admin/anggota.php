@@ -6,12 +6,31 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Ditambahakan!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/AdminLTELogo.png"
-                alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/Loading.png" alt="AdminLTELogo"
+                height="60" width="60">
         </div>
 
         <?php $this->load->view('admin/components/navbar');?>
@@ -86,6 +105,9 @@
                                             :
                                             $id++;
                                             $id_user = $i['id_user'];
+                                            $username = $i['username'];
+                                            $email = $i['email'];
+                                            $password = $i['password'];
                                             $nama_lengkap = $i['nama_lengkap'];
                                             $jabatan = $i['jabatan'];
                                             $no_kk = $i['no_kk'];
@@ -121,7 +143,7 @@
                                                             href="<?= base_url();?>assets/foto/<?php echo $foto_kk?>"
                                                             target="_blank"><img
                                                                 src="<?= base_url();?>assets/foto/<?php echo $foto_kk?>"
-                                                                style="width: 25%"> </a></center>
+                                                                style="width: 50%"> </a></center>
                                                 </td>
                                                 <td><?=$id_status_verifikasi?></td>
                                                 <td><?=$tanggal_registered?></td>
@@ -159,7 +181,92 @@
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                ...
+                                                                <form action="<?=base_url();?>Anggota/tambah_data_admin"
+                                                                    method="POST" enctype="multipart/form-data">
+                                                                    <div class="form-group">
+                                                                        <label for="username">Username</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="username" name="username" value="<?=?>" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="password">Password</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="password" name="password" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="email">Email</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="email" name="email" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="nama_lengkap">Nama Lengkap</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="nama_lengkap" name="nama_lengkap"
+                                                                            required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="jabatan">Jabatan</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="jabatan" name="jabatan" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="no_kk">Nomor Kartu Keluarga</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="no_kk" name="no_kk" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="no_ktp">Nomor KTP</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="no_ktp" name="no_ktp" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="jenis_kelamin">Jenis Kelamin</label>
+                                                                        <select class="form-control" id="jenis_kelamin"
+                                                                            name="jenis_kelamin" required>
+                                                                            <option value="L">Laki-Laki</option>
+                                                                            <option value="P">Perempuan</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="agama">Agama</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="agama" name="agama" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="no_hp">Nomor HP</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="no_hp" name="no_hp" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="alamat">Alamat</label>
+                                                                        <textarea class="form-control"
+                                                                            id="exampleFormControlTextarea1" rows="3"
+                                                                            name="alamat" required></textarea>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="tempat_lahir">Tempat Lahir</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="tempat_lahir" name="tempat_lahir"
+                                                                            required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="tanggal_lahir">Tanggal Lahir</label>
+                                                                        <input type="date" class="form-control"
+                                                                            id="tanggal_lahir" name="tanggal_lahir"
+                                                                            required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="foto_kk">Foto Kartu Keluarga</label>
+                                                                        <input type="file" class="form-control"
+                                                                            id="foto_kk" name="foto_kk" required>
+                                                                        <small id="foto_kk"
+                                                                            class="form-text text-muted">Format
+                                                                            PNG/JPG/JPEG (Max
+                                                                            2MB)</small>
+                                                                    </div>
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary">Submit</button>
+                                                                </form>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"
@@ -224,7 +331,8 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="<?=base_url();?>Anggota/tambah_data_admin">
+                                <form action="<?=base_url();?>Anggota/tambah_data_admin" method="POST"
+                                    enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label for="username">Username</label>
                                         <input type="text" class="form-control" id="username" name="username" required>
