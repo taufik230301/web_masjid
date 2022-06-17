@@ -201,7 +201,7 @@
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" class="btn btn-primary" data-toggle="modal"
-                                                                data-target="#ubah_anggota">
+                                                                data-target="#ubah_anggota<?=$id_user?>">
                                                                 Edit <i class="nav-icon fas fa-edit"></i>
                                                             </a>
 
@@ -209,15 +209,15 @@
                                                     </div>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
-                                                            <a href="" data-toggle="modal" data-target="#delete_anggota"
+                                                            <a href="" data-toggle="modal" data-target="#delete_anggota<?=$id_user?>"
                                                                 class="btn btn-danger">Hapus <i
                                                                     class="fas fa-trash"></i>
                                                             </a>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="ubah_anggota" tabindex="-1"
+                                                <!-- Modal Ubah Data Anggota-->
+                                                <div class="modal fade" id="ubah_anggota<?=$id_user?>" tabindex="-1"
                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
@@ -231,7 +231,7 @@
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <form action="<?=base_url();?>Anggota/edit_data_admin"
+                                                                <form action="<?=base_url();?>Pengurus/edit_data_admin"
                                                                     method="POST" enctype="multipart/form-data">
                                                                     <input type="text" value="<?=$id_user?>"
                                                                         name="id_user" hidden>
@@ -258,12 +258,6 @@
                                                                         <input type="text" class="form-control"
                                                                             id="nama_lengkap" name="nama_lengkap"
                                                                             value="<?=$nama_lengkap?>" required>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="jabatan">Jabatan</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="jabatan" name="jabatan"
-                                                                            value="<?=$jabatan?>" required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="no_kk">Nomor Kartu Keluarga</label>
@@ -343,7 +337,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="delete_anggota" tabindex="-1"
+                                                <!-- Modal Delete Data Anggota -->
+                                                <div class="modal fade" id="delete_anggota<?=$id_user?>" tabindex="-1"
                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
@@ -431,10 +426,6 @@
                                             required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="jabatan">Jabatan</label>
-                                        <input type="text" class="form-control" id="jabatan" name="jabatan" required>
-                                    </div>
-                                    <div class="form-group">
                                         <label for="no_kk">Nomor Kartu Keluarga</label>
                                         <input type="text" class="form-control" id="no_kk" name="no_kk" required>
                                     </div>
@@ -488,14 +479,7 @@
             <!-- /.content -->
             <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
-            </div>
-        </footer>
+       
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

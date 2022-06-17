@@ -32,6 +32,15 @@ class M_user extends CI_Model
 
     }
 
+    public function read_all_pengurus()
+    {
+
+        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level=3 AND nama_lengkap IS NOT NULL AND jabatan !='Anggota Biasa'");
+        return $hasil;
+
+    }
+
+
     public function insert_user($id, $username, $password, $email, $id_user_level, 
     $nama_lengkap, $jabatan, $no_kk, $no_ktp, $jenis_kelamin, $agama, $no_hp, $alamat,
      $tempat_lahir, $tanggal_lahir, $foto_kk, $id_status_verifikasi)

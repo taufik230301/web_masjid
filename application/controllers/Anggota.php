@@ -33,7 +33,7 @@ class Anggota extends CI_Controller {
 		$password = $this->input->post('password');
 		$email = $this->input->post('email');
 		$nama_lengkap = $this->input->post('nama_lengkap');
-		$jabatan = $this->input->post('jabatan');
+		$jabatan = 'Anggota Biasa';
 		$no_kk = $this->input->post('no_kk');
 		$no_ktp = $this->input->post('no_ktp');
 		$jenis_kelamin = $this->input->post('jenis_kelamin');
@@ -108,7 +108,7 @@ class Anggota extends CI_Controller {
 		$password = $this->input->post('password');
 		$email = $this->input->post('email');
 		$nama_lengkap = $this->input->post('nama_lengkap');
-		$jabatan = $this->input->post('jabatan');
+		$jabatan = 'Anggota Biasa';
 		$no_kk = $this->input->post('no_kk');
 		$no_ktp = $this->input->post('no_ktp');
 		$jenis_kelamin = $this->input->post('jenis_kelamin');
@@ -162,7 +162,7 @@ class Anggota extends CI_Controller {
 	public function hapus_data_admin()
 	{
 		$id_user =  $this->input->post('id_user');
-		
+
 		$path = './assets/foto/';
 
 		$hasil = $this->m_user->delete_user($id_user);
