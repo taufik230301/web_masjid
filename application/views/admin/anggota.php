@@ -25,6 +25,36 @@
     });
     </script>
     <?php } ?>
+
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diubah!",
+        text: "Data Berhasil Diubah!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_edit')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('error_file_kk')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Format File Tidak Sesuai!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -181,84 +211,104 @@
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <form action="<?=base_url();?>Anggota/tambah_data_admin"
+                                                                <form action="<?=base_url();?>Anggota/edit_data_admin"
                                                                     method="POST" enctype="multipart/form-data">
+                                                                    <input type="text" value="<?=$id_user?>" name="id_user" hidden>
                                                                     <div class="form-group">
                                                                         <label for="username">Username</label>
                                                                         <input type="text" class="form-control"
-                                                                            id="username" name="username" value="<?=?>" required>
+                                                                            id="username" name="username"
+                                                                            value="<?=$username?>" required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="password">Password</label>
                                                                         <input type="text" class="form-control"
-                                                                            id="password" name="password" required>
+                                                                            id="password" name="password"
+                                                                            value="<?=$password?>" required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="email">Email</label>
                                                                         <input type="text" class="form-control"
-                                                                            id="email" name="email" required>
+                                                                            id="email" name="email" value="<?=$email?>"
+                                                                            required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="nama_lengkap">Nama Lengkap</label>
                                                                         <input type="text" class="form-control"
                                                                             id="nama_lengkap" name="nama_lengkap"
-                                                                            required>
+                                                                            value="<?=$nama_lengkap?>" required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="jabatan">Jabatan</label>
                                                                         <input type="text" class="form-control"
-                                                                            id="jabatan" name="jabatan" required>
+                                                                            id="jabatan" name="jabatan"
+                                                                            value="<?=$jabatan?>" required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="no_kk">Nomor Kartu Keluarga</label>
                                                                         <input type="text" class="form-control"
-                                                                            id="no_kk" name="no_kk" required>
+                                                                            id="no_kk" name="no_kk" value="<?=$no_kk?>"
+                                                                            required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="no_ktp">Nomor KTP</label>
                                                                         <input type="text" class="form-control"
-                                                                            id="no_ktp" name="no_ktp" required>
+                                                                            id="no_ktp" name="no_ktp"
+                                                                            value="<?=$no_ktp?>" required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="jenis_kelamin">Jenis Kelamin</label>
                                                                         <select class="form-control" id="jenis_kelamin"
                                                                             name="jenis_kelamin" required>
-                                                                            <option value="L">Laki-Laki</option>
-                                                                            <option value="P">Perempuan</option>
+                                                                            <option value="L" <?php  if($jenis_kelamin == 'L'){
+                                                                                                echo 'selected';
+                                                                                            }else{
+                                                                                                echo '';
+                                                                                            }  ?>>Laki-Laki</option>
+                                                                            <option value="P" <?php  if($jenis_kelamin == 'P'){
+                                                                                                echo 'selected';
+                                                                                            }else{
+                                                                                                echo '';
+                                                                                            }  ?>>Perempuan</option>
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="agama">Agama</label>
                                                                         <input type="text" class="form-control"
-                                                                            id="agama" name="agama" required>
+                                                                            id="agama" name="agama" value="<?=$agama?>"
+                                                                            required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="no_hp">Nomor HP</label>
                                                                         <input type="text" class="form-control"
-                                                                            id="no_hp" name="no_hp" required>
+                                                                            id="no_hp" name="no_hp"
+                                                                            value="<?=$nama_lengkap?>" required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="alamat">Alamat</label>
                                                                         <textarea class="form-control"
                                                                             id="exampleFormControlTextarea1" rows="3"
-                                                                            name="alamat" required></textarea>
+                                                                            name="alamat"
+                                                                            required><?=$alamat?></textarea>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="tempat_lahir">Tempat Lahir</label>
                                                                         <input type="text" class="form-control"
                                                                             id="tempat_lahir" name="tempat_lahir"
-                                                                            required>
+                                                                            value="<?=$tempat_lahir?>" required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="tanggal_lahir">Tanggal Lahir</label>
                                                                         <input type="date" class="form-control"
                                                                             id="tanggal_lahir" name="tanggal_lahir"
-                                                                            required>
+                                                                            value="<?=$tanggal_lahir?>" required>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="foto_kk">Foto Kartu Keluarga</label>
                                                                         <input type="file" class="form-control"
                                                                             id="foto_kk" name="foto_kk" required>
+                                                                        <input type="file" id="foto_kk_old"
+                                                                            name="foto_kk_old" hidden>
                                                                         <small id="foto_kk"
                                                                             class="form-text text-muted">Format
                                                                             PNG/JPG/JPEG (Max
@@ -267,12 +317,6 @@
                                                                     <button type="submit"
                                                                         class="btn btn-primary">Submit</button>
                                                                 </form>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary"
-                                                                    data-dismiss="modal">Close</button>
-                                                                <button type="button" class="btn btn-primary">Save
-                                                                    changes</button>
                                                             </div>
                                                         </div>
                                                     </div>

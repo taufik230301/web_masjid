@@ -51,4 +51,18 @@ class M_user extends CI_Model
          else
              return false;
     }
+
+    public function update_user($id_user, $username, $password, $email, $nama_lengkap, $jabatan, $no_kk, $no_ktp, $jenis_kelamin, $agama, $no_hp, $alamat, $tempat_lahir, $tanggal_lahir, $foto_kk)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE user SET username='$username', password='$password', email='$email' WHERE id_user='$id_user'");
+        $this->db->query("UPDATE user_detail SET nama_lengkap='$nama_lengkap', jabatan='$jabatan', no_kk='$no_kk', no_ktp='$no_ktp', jenis_kelamin='$jenis_kelamin', agama='$agama', no_hp='$no_hp', alamat='$alamat', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', foto_kk='$foto_kk' WHERE id_user_detail='$id_user'");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+    }
 }

@@ -70,7 +70,7 @@ class Anggota extends CI_Controller {
 		$config['max_size'] = '2048';  //2MB max
 		$config['max_width'] = '4480'; // pixel
 		$config['max_height'] = '4480'; // pixel
-		$config['file_name'] = $foto_name.'_saya';
+		$config['file_name'] = $foto_name.'_kk';
 		$this->upload->initialize($config);
 		$foto_kk_upload = $this->upload->do_upload('foto_kk');
 		
@@ -78,7 +78,7 @@ class Anggota extends CI_Controller {
 			$foto_kk = $this->upload->data();
 		}else{
 			
-			$this->session->set_flashdata('error_file_saya','error_file_saya');
+			$this->session->set_flashdata('error_file_kk','error_file_kk');
 			redirect('Anggota/view_admin');
 		}
 
@@ -98,6 +98,64 @@ class Anggota extends CI_Controller {
         
 			}
 
+
+	}
+
+	public function edit_data_admin()
+	{
+		
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$email = $this->input->post('email');
+		$nama_lengkap = $this->input->post('nama_lengkap');
+		$jabatan = $this->input->post('jabatan');
+		$no_kk = $this->input->post('no_kk');
+		$no_ktp = $this->input->post('no_ktp');
+		$jenis_kelamin = $this->input->post('jenis_kelamin');
+		$agama = $this->input->post('agama');
+		$no_hp = $this->input->post('no_hp');
+		$alamat = $this->input->post('alamat');
+		$tempat_lahir = $this->input->post('tempat_lahir');
+		$tanggal_lahir = $this->input->post('tanggal_lahir');
+		$num = rand(1, 9999);
+		$id_user =  $this->input->post('id_user');
+		$foto_name = md5($nama_lengkap.$alamat.$no_hp.$id_user);
+		
+		$path = './assets/foto/';
+
+		$this->load->library('upload');
+		$config['upload_path'] = './assets/foto';
+		$config['allowed_types'] = 'jpg|png|jpeg|gif';
+		$config['max_size'] = '2048';  //2MB max
+		$config['max_width'] = '4480'; // pixel
+		$config['max_height'] = '4480'; // pixel
+		$config['file_name'] = $foto_name.'_kk';
+		$this->upload->initialize($config);
+		$foto_kk_upload = $this->upload->do_upload('foto_kk');
+		
+		if($foto_kk_upload){
+			$foto_kk = $this->upload->data();
+		}else{
+			
+			$this->session->set_flashdata('error_file_kk','error_file_kk');
+			redirect('Anggota/view_admin');
+		}
+
+		$hasil = $this->m_user->update_user($id_user, $username, $password, $email, $nama_lengkap, $jabatan, $no_kk, $no_ktp, $jenis_kelamin, $agama, $no_hp, $alamat, $tempat_lahir, $tanggal_lahir, $foto_kk['file_name']);
+
+		
+
+			if($hasil==false){
+
+          	$this->session->set_flashdata('eror_edit','eror_edit');
+          	redirect('Anggota/view_admin');
+
+			}else{
+            @unlink($path.$this->input->post('foto_kk_old'));
+			$this->session->set_flashdata('edit','edit');
+       	  	redirect('Anggota/view_admin');
+        
+			}
 
 	}
     
