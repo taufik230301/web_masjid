@@ -119,7 +119,7 @@ class Anggota extends CI_Controller {
 		$tanggal_lahir = $this->input->post('tanggal_lahir');
 		$num = rand(1, 9999);
 		$id_user =  $this->input->post('id_user');
-		$foto_name = md5($nama_lengkap.$alamat.$no_hp.$id_user);
+		$foto_name = md5($nama_lengkap.$alamat.$no_hp.$id_user.$num);
 		
 		$path = './assets/foto/';
 
@@ -157,6 +157,29 @@ class Anggota extends CI_Controller {
         
 			}
 
+	}
+
+	public function hapus_data_admin()
+	{
+		$id_user =  $this->input->post('id_user');
+		
+		$path = './assets/foto/';
+
+		$hasil = $this->m_user->delete_user($id_user);
+
+	
+			if($hasil==false){
+
+				$this->session->set_flashdata('eror_delete','eror_delete');
+				redirect('Anggota/view_admin');
+
+			}else{
+
+				@unlink($path.$this->input->post('foto_kk_old'));
+				$this->session->set_flashdata('delete','delete');
+				redirect('Anggota/view_admin');
+        
+			}
 	}
     
 	

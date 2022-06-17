@@ -65,4 +65,18 @@ class M_user extends CI_Model
          else
              return false;
     }
+
+    public function delete_user($id_user)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("DELETE FROM user WHERE id_user='$id_user'");
+        $this->db->query("DELETE FROM user_detail WHERE id_user_detail='$id_user'");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+    }
 }

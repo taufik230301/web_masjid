@@ -46,6 +46,26 @@
     </script>
     <?php } ?>
 
+    <?php if ($this->session->flashdata('delete')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Dihapus!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_delete')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <?php if ($this->session->flashdata('error_file_kk')){ ?>
     <script>
     swal({
@@ -213,7 +233,8 @@
                                                             <div class="modal-body">
                                                                 <form action="<?=base_url();?>Anggota/edit_data_admin"
                                                                     method="POST" enctype="multipart/form-data">
-                                                                    <input type="text" value="<?=$id_user?>" name="id_user" hidden>
+                                                                    <input type="text" value="<?=$id_user?>"
+                                                                        name="id_user" hidden>
                                                                     <div class="form-group">
                                                                         <label for="username">Username</label>
                                                                         <input type="text" class="form-control"
@@ -307,8 +328,9 @@
                                                                         <label for="foto_kk">Foto Kartu Keluarga</label>
                                                                         <input type="file" class="form-control"
                                                                             id="foto_kk" name="foto_kk" required>
-                                                                        <input type="file" id="foto_kk_old"
-                                                                            name="foto_kk_old" hidden>
+                                                                        <input type="text" id="foto_kk_old"
+                                                                            name="foto_kk_old" value="<?=$foto_kk?>"
+                                                                            hidden>
                                                                         <small id="foto_kk"
                                                                             class="form-text text-muted">Format
                                                                             PNG/JPG/JPEG (Max
@@ -336,13 +358,27 @@
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                ...
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary"
-                                                                    data-dismiss="modal">Close</button>
-                                                                <button type="button" class="btn btn-primary">Save
-                                                                    changes</button>
+                                                                <form action="<?= base_url();?>Anggota/hapus_data_admin"
+                                                                    method="post" enctype="multipart/form-data">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <input type="hidden" name="id_user"
+                                                                                value="<?php echo $id_user?>" />
+                                                                            <input type="text" name="foto_kk_old"
+                                                                                value="<?=$foto_kk?>" hidden>
+
+                                                                            <p>Apakah kamu yakin ingin menghapus data
+                                                                                ini?</i></b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button"
+                                                                            class="btn btn-danger ripple"
+                                                                            data-dismiss="modal">Tidak</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-success ripple save-category">Ya</button>
+                                                                    </div>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                     </div>
