@@ -35,6 +35,11 @@
                                 <li class="breadcrumb-item active">Anggota</li>
                             </ol>
                         </div><!-- /.col -->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary ml-2 mt-3" data-toggle="modal"
+                            data-target="#exampleModal">
+                            Tambah Data
+                        </button>
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -63,7 +68,6 @@
                                                 <th>Nomor KK</th>
                                                 <th>Nomor KTP</th>
                                                 <th>Jenis Kelamin</th>
-                                                <th>Nama Lengkap</th>
                                                 <th>Agama</th>
                                                 <th>Nomor HP</th>
                                                 <th>Alamat</th>
@@ -84,6 +88,17 @@
                                             $id_user = $i['id_user'];
                                             $nama_lengkap = $i['nama_lengkap'];
                                             $jabatan = $i['jabatan'];
+                                            $no_kk = $i['no_kk'];
+                                            $no_ktp = $i['no_ktp'];
+                                            $jenis_kelamin = $i['jenis_kelamin'];
+                                            $agama = $i['agama'];
+                                            $no_hp = $i['no_hp'];
+                                            $alamat = $i['alamat'];
+                                            $tempat_lahir = $i['tempat_lahir'];
+                                            $tanggal_lahir = $i['tanggal_lahir'];
+                                            $foto_kk = $i['foto_kk'];
+                                            $id_status_verifikasi = $i['id_status_verifikasi'];
+                                            $tanggal_registered = $i['tanggal_registered'];
                                             
                                           
 
@@ -93,20 +108,23 @@
                                                 <td><?=$nama_lengkap?>
                                                 </td>
                                                 <td><?=$jabatan?></td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0
+                                                <td><?=$no_kk?></td>
+                                                <td><?=$no_ktp?></td>
+                                                <td><?=$jenis_kelamin?></td>
+                                                <td><?=$agama?></td>
+                                                <td><?=$no_hp?></td>
+                                                <td><?=$alamat?></td>
+                                                <td><?=$tempat_lahir?></td>
+                                                <td><?=$tanggal_lahir?></td>
+                                                <td>
+                                                    <center> <a
+                                                            href="<?= base_url();?>assets/foto/<?php echo $foto_kk?>"
+                                                            target="_blank"><img
+                                                                src="<?= base_url();?>assets/foto/<?php echo $foto_kk?>"
+                                                                style="width: 25%"> </a></center>
                                                 </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0
-                                                </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
+                                                <td><?=$id_status_verifikasi?></td>
+                                                <td><?=$tanggal_registered?></td>
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
@@ -152,6 +170,32 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="modal fade" id="delete_anggota" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Delete
+                                                                    Data
+                                                                    Anggota
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                ...
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary">Save
+                                                                    changes</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </tr>
                                             <?php endforeach;?>
                                         </tbody>
@@ -167,26 +211,87 @@
                     <!-- /.row -->
                 </div>
                 <!-- /.container-fluid -->
-                <!-- Modal -->
-                <div class="modal fade" id="delete_anggota" tabindex="-1" aria-labelledby="exampleModalLabel"
+
+                <!-- Modal Tambah Data Anggota -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Delete Data
-                                    Anggota
-                                </h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Anggota</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save
-                                    changes</button>
+                                <form action="<?=base_url();?>Anggota/tambah_data_admin">
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" id="username" name="username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="text" class="form-control" id="password" name="password" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="email" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nama_lengkap">Nama Lengkap</label>
+                                        <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jabatan">Jabatan</label>
+                                        <input type="text" class="form-control" id="jabatan" name="jabatan" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="no_kk">Nomor Kartu Keluarga</label>
+                                        <input type="text" class="form-control" id="no_kk" name="no_kk" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="no_ktp">Nomor KTP</label>
+                                        <input type="text" class="form-control" id="no_ktp" name="no_ktp" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jenis_kelamin">Jenis Kelamin</label>
+                                        <select class="form-control" id="jenis_kelamin" name="jenis_kelamin" required>
+                                            <option value="L">Laki-Laki</option>
+                                            <option value="P">Perempuan</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="agama">Agama</label>
+                                        <input type="text" class="form-control" id="agama" name="agama" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="no_hp">Nomor HP</label>
+                                        <input type="text" class="form-control" id="no_hp" name="no_hp" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="alamat">Alamat</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                            name="alamat" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tempat_lahir">Tempat Lahir</label>
+                                        <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tanggal_lahir">Tanggal Lahir</label>
+                                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir"
+                                            required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="foto_kk">Foto Kartu Keluarga</label>
+                                        <input type="file" class="form-control" id="foto_kk" name="foto_kk" required>
+                                        <small id="foto_kk" class="form-text text-muted">Format PNG/JPG/JPEG (Max
+                                            2MB)</small>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
                             </div>
                         </div>
                     </div>
