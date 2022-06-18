@@ -105,7 +105,7 @@
                             <!-- small box -->
                             <div class="small-box bg-primary">
                                 <div class="inner">
-                                    <h3>44</h3>
+                                    <h3><?=$total_anggota_kematian['total_anggota_kematian']?></h3>
 
                                     <p>Info Kematian</p>
                                 </div>

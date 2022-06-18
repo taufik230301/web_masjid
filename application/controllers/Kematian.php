@@ -14,7 +14,6 @@ class Kematian extends CI_Controller {
 	{
 
 		$data['anggota_not_kematian'] = $this->m_user->read_all_anggota_not_kematian()->result_array();
-
 		$data['anggota_kematian'] = $this->m_user->read_all_anggota_kematian()->result_array();
 		
 		// echo var_dump($data);

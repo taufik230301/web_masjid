@@ -42,4 +42,12 @@ class M_kematian extends CI_Model
              return false;
     }
 
+    public function count_anggota_kematian()
+    {
+
+        $hasil=$this->db->query("SELECT count(id_kematian) as total_anggota_kematian FROM kematian");
+        return $hasil;
+
+    }
+
 }
