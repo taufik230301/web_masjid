@@ -49,4 +49,10 @@ class M_inventory extends CI_Model
         return $hasil;
         
     }
+
+    public function count_all_inventory()
+    {
+        $hasil=$this->db->query("SELECT count(id_inventory) as total_inventory FROM inventory");
+        return $hasil;
+    }
 }

@@ -89,7 +89,7 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3><?=$total['total_berita']?></h3>
+                                    <h3><?=$total_berita['total_berita']?></h3>
 
                                     <p>Info Berita</p>
                                 </div>
@@ -100,7 +100,6 @@
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
-                        <!-- ./col -->
                         <!-- ./col -->
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
@@ -122,7 +121,7 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>65</h3>
+                                    <h3><?=$total_pengurus['total_pengurus']?></h3>
 
                                     <p>Pengurus</p>
                                 </div>
@@ -138,7 +137,7 @@
                             <!-- small box -->
                             <div class="small-box bg-secondary">
                                 <div class="inner">
-                                    <h3>65</h3>
+                                    <h3><?=$total_anggota['total_anggota']?></h3>
 
                                     <p>Anggota</p>
                                 </div>
@@ -150,6 +149,21 @@
                             </div>
                         </div>
                         <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3><?=$total_inventory['total_inventory']?></h3>
+
+                                    <p>Inventory</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fas fa-info"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i
+                                        class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
                     </div>
                     <!-- /.row -->
 

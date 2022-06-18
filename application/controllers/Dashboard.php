@@ -7,6 +7,8 @@ class Dashboard extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('m_berita');
+		$this->load->model('m_inventory');
+		$this->load->model('m_user');
 	}
 
 	public function view_admin()
@@ -14,7 +16,10 @@ class Dashboard extends CI_Controller {
 
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
-			$data['total'] = $this->m_berita->count_all_berita()->row_array();
+			$data['total_berita'] = $this->m_berita->count_all_berita()->row_array();
+			$data['total_inventory'] = $this->m_inventory->count_all_inventory()->row_array();
+			$data['total_pengurus'] = $this->m_user->count_all_pengurus()->row_array();
+			$data['total_anggota'] = $this->m_user->count_all_anggota()->row_array();
 			
 			$this->load->view('admin/dashboard.php', $data);
 

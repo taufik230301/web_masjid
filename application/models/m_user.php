@@ -32,10 +32,26 @@ class M_user extends CI_Model
 
     }
 
+    public function count_all_anggota()
+    {
+
+        $hasil=$this->db->query("SELECT count(id_user) as total_anggota FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level=3 AND nama_lengkap IS NOT NULL");
+        return $hasil;
+
+    }
+
     public function read_all_pengurus()
     {
 
         $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level=3 AND nama_lengkap IS NOT NULL AND jabatan !='Anggota Biasa'");
+        return $hasil;
+
+    }
+
+    public function count_all_pengurus()
+    {
+
+        $hasil=$this->db->query("SELECT count(id_user) as total_pengurus FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level=3 AND nama_lengkap IS NOT NULL AND jabatan !='Anggota Biasa'");
         return $hasil;
 
     }
