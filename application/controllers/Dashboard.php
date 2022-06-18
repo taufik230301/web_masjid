@@ -3,12 +3,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dashboard extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('m_berita');
+	}
+
 	public function view_admin()
 	{
 
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
-			$this->load->view('admin/dashboard.php');
+			$data['total'] = $this->m_berita->count_all_berita()->row_array();
+			
+			$this->load->view('admin/dashboard.php', $data);
 
 		}else{
 

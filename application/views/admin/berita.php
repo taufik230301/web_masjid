@@ -159,7 +159,31 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            ...
+                                                            <form action="<?=base_url();?>Berita/tambah_data_admin"
+                                                                method="POST" enctype="multipart/form-data">
+
+                                                                <div class="form-group">
+                                                                    <label for="judul_berita">Judul Berita</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="judul_berita" name="judul_berita"
+                                                                        value="<?=$judul_berita?>">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="isi_berita">Isi Berita</label>
+                                                                    <textarea class="form-control" id="isi_berita"
+                                                                        rows="3" name="isi_berita"
+                                                                        required><?=$isi_berita?></textarea>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="gambar_berita">Gambar Berita</label>
+                                                                    <input type="file" class="form-control"
+                                                                        id="gambar_berita" name="gambar_berita">
+                                                                    <input type="text" class="form-control"
+                                                                        id="gambar_berita_old" name="gambar_berita_old" value="<?=$gambar_berita?>" hidden>
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
