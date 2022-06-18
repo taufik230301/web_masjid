@@ -46,5 +46,23 @@ class Kematian extends CI_Controller {
          		 redirect('Kematian/view_admin');
         }
 	}
+
+	public function ubah_data_admin()
+	{
+		$id_kematian = $this->input->post('id_kematian');
+		$tanggal_kematian = $this->input->post('tanggal_kematian');
+		$jam_kematian = $this->input->post('jam_kematian');
+		$usia = $this->input->post('usia');
+
+		$hasil = $this->m_kematian->update_kematian($tanggal_kematian, $jam_kematian, $usia, $id_kematian);
+
+        if($hasil==false){
+                $this->session->set_flashdata('eror_edit','eror_edit');
+                redirect('Kematian/view_admin');
+        }else{
+          		$this->session->set_flashdata('edit','edit');
+         		 redirect('Kematian/view_admin');
+        }
+	}
 	
 }

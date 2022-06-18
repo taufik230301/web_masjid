@@ -27,6 +27,26 @@
     });
     </script>
     <?php } ?>
+
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diubah!",
+        text: "Data Berhasil Diubah!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_edit')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -98,7 +118,7 @@
                                             :
                                             $id++;
                                             $id_user = $i['id_user'];
-                                            
+                                            $id_kematian = $i['id_kematian'];
                                             $tanggal_kematian = $i['tanggal_kematian'];
                                             $jam_kematian = $i['jam_kematian'];
                                             $usia = $i['usia'];
@@ -151,7 +171,7 @@
                                                         <div class="modal-body">
                                                             <form action="<?=base_url();?>Kematian/ubah_data_admin"
                                                                 method="POST">
-
+                                                                <input type="text" name="id_kematian" value="<?=$id_kematian?>" hidden>
                                                                 <div class="form-group">
                                                                     <label for="tanggal_kematian">Tanggal
                                                                         Kematian</label>
@@ -162,7 +182,8 @@
                                                                 <div class="form-group">
                                                                     <label for="jam_kematian">Jam Kematian</label>
                                                                     <input type="time" class="form-control"
-                                                                        id="jam_kematian" name="jam_kematian" value="<?=$jam_kematian?>">
+                                                                        id="jam_kematian" name="jam_kematian"
+                                                                        value="<?=$jam_kematian?>">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="usia">Usia</label>
