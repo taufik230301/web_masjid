@@ -64,5 +64,21 @@ class Kematian extends CI_Controller {
          		 redirect('Kematian/view_admin');
         }
 	}
+
+	public function hapus_data_admin()
+	{
+		$id_kematian = $this->input->post('id_kematian');
+
+		$hasil = $this->m_kematian->delete_kematian($id_kematian);
+
+        if($hasil==false){
+                $this->session->set_flashdata('eror_delete','eror_delete');
+                redirect('Kematian/view_admin');
+        }else{
+          		$this->session->set_flashdata('delete','delete');
+         		 redirect('Kematian/view_admin');
+        }
+
+	}
 	
 }

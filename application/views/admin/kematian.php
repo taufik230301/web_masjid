@@ -47,6 +47,26 @@
     });
     </script>
     <?php } ?>
+
+    <?php if ($this->session->flashdata('delete')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Dihapus!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_delete')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -137,7 +157,7 @@
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" class="btn btn-primary" data-toggle="modal"
-                                                                data-target="#ubah_kematian">
+                                                                data-target="#ubah_kematian<?=$id_kematian?>">
                                                                 Edit <i class="nav-icon fas fa-edit"></i>
                                                             </a>
 
@@ -146,7 +166,7 @@
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" data-toggle="modal"
-                                                                data-target="#delete_kematian"
+                                                                data-target="#delete_kematian<?=$id_kematian?>"
                                                                 class="btn btn-danger">Hapus <i
                                                                     class="fas fa-trash"></i>
                                                             </a>
@@ -155,7 +175,7 @@
                                                 </td>
                                             </tr>
                                             <!-- Modal -->
-                                            <div class="modal fade" id="ubah_kematian" tabindex="-1"
+                                            <div class="modal fade" id="ubah_kematian<?=$id_kematian?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
@@ -171,7 +191,8 @@
                                                         <div class="modal-body">
                                                             <form action="<?=base_url();?>Kematian/ubah_data_admin"
                                                                 method="POST">
-                                                                <input type="text" name="id_kematian" value="<?=$id_kematian?>" hidden>
+                                                                <input type="text" name="id_kematian"
+                                                                    value="<?=$id_kematian?>" hidden>
                                                                 <div class="form-group">
                                                                     <label for="tanggal_kematian">Tanggal
                                                                         Kematian</label>
@@ -192,6 +213,43 @@
                                                                 </div>
                                                                 <button type="submit"
                                                                     class="btn btn-primary">Submit</button>
+                                                            </form>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="delete_kematian<?=$id_kematian?>"
+                                                tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Hapus Data
+                                                                Kematian</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="<?= base_url();?>Kematian/hapus_data_admin"
+                                                                method="post" enctype="multipart/form-data">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <input type="hidden" name="id_kematian"
+                                                                            value="<?php echo $id_kematian?>" />
+
+                                                                        <p>Apakah kamu yakin ingin menghapus data
+                                                                            ini?</i></b></p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger ripple"
+                                                                        data-dismiss="modal">Tidak</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-success ripple save-category">Ya</button>
+                                                                </div>
                                                             </form>
                                                         </div>
 

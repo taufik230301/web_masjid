@@ -29,4 +29,17 @@ class M_kematian extends CI_Model
             return false;
     }
 
+    public function delete_kematian($id_kematian)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("DELETE FROM kematian WHERE id_kematian='$id_kematian'");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+    }
+
 }

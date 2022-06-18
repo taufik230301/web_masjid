@@ -69,8 +69,8 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/Loading.png"
-                alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/Loading.png" alt="AdminLTELogo"
+                height="60" width="60">
         </div>
 
         <?php $this->load->view('admin/components/navbar');?>
@@ -308,7 +308,7 @@
                                                                 </div>
                                                             </form>
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
