@@ -20,7 +20,7 @@ class Register extends CI_Controller {
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 		$re_password = $this->input->post('re_password');
-		$id_user_level = 1;
+		$id_user_level = 3;
 		$id_status_verifikasi = 1;
 		$number = rand(1, 9999);
 		$id = md5($username.$email.$password.$number);

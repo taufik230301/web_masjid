@@ -32,6 +32,14 @@ class M_user extends CI_Model
 
     }
 
+    public function read_all_anggota_by_id_user($id_user)
+    {
+
+        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_user_level=3 AND id_user='$id_user'");
+        return $hasil;
+
+    }
+
     public function count_all_anggota()
     {
 
@@ -103,6 +111,19 @@ class M_user extends CI_Model
 
         $this->db->query("UPDATE user SET username='$username', password='$password', email='$email' WHERE id_user='$id_user'");
         $this->db->query("UPDATE user_detail SET nama_lengkap='$nama_lengkap', jabatan='$jabatan', no_kk='$no_kk', no_ktp='$no_ktp', jenis_kelamin='$jenis_kelamin', agama='$agama', no_hp='$no_hp', alamat='$alamat', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', foto_kk='$foto_kk' WHERE id_user_detail='$id_user'");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+    }
+
+    public function update_user_detail($id_user, $nama_lengkap, $jabatan, $no_kk, $no_ktp, $jenis_kelamin, $agama, $no_hp, $alamat, $tempat_lahir, $tanggal_lahir, $foto_kk, $id_status_verifikasi)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE user_detail SET nama_lengkap='$nama_lengkap', jabatan='$jabatan', no_kk='$no_kk', no_ktp='$no_ktp', jenis_kelamin='$jenis_kelamin', agama='$agama', no_hp='$no_hp', alamat='$alamat', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', foto_kk='$foto_kk', id_status_verifikasi='$id_status_verifikasi' WHERE id_user_detail='$id_user'");
  
         $this->db->trans_complete();
          if($this->db->trans_status()==true)
