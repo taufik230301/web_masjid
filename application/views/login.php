@@ -24,6 +24,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body>
+    <?php if($this->session->flashdata('success_log_out')){?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Anda Berhasil Log Out!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
 
     <?php if($this->session->flashdata('loggin_err_pass')){?>
     <script>
