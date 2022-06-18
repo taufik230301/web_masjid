@@ -8,6 +8,25 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Ditambahakan!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -80,18 +99,20 @@
                                             $id++;
                                             $id_user = $i['id_user'];
                                             
+                                            $tanggal_kematian = $i['tanggal_kematian'];
+                                            $jam_kematian = $i['jam_kematian'];
+                                            $usia = $i['usia'];
                                             $nama_lengkap = $i['nama_lengkap'];
-                                            
                                             
                                           
 
                                             ?>
                                             <tr>
                                                 <td><?=$id?></td>
+                                                <td><?=$tanggal_kematian?></td>
+                                                <td><?=$jam_kematian?></td>
+                                                <td><?=$usia?></td>
                                                 <td><?=$nama_lengkap?></td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
@@ -128,14 +149,31 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            ...
+                                                            <form action="<?=base_url();?>Kematian/ubah_data_admin"
+                                                                method="POST">
+
+                                                                <div class="form-group">
+                                                                    <label for="tanggal_kematian">Tanggal
+                                                                        Kematian</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="tanggal_kematian" name="tanggal_kematian"
+                                                                        value="<?=$tanggal_kematian?>">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="jam_kematian">Jam Kematian</label>
+                                                                    <input type="time" class="form-control"
+                                                                        id="jam_kematian" name="jam_kematian" value="<?=$jam_kematian?>">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="usia">Usia</label>
+                                                                    <input type="number" class="form-control" id="usia"
+                                                                        name="usia" value="<?=$usia?>">
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
+                                                            </form>
                                                         </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save
-                                                                changes</button>
-                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -153,8 +191,8 @@
                     <!-- /.row -->
                 </div>
                 <!-- /.container-fluid -->
-                <!-- Modal -->
-                <!-- Modal -->
+
+                <!-- Modal Tambah Data Kematian-->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
@@ -169,7 +207,9 @@
                                 <form action="<?=base_url();?>Kematian/tambah_data_admin" method="POST">
                                     <div class="form-group">
                                         <label for="id_user">Anggota</label>
-                                        <select class="form-control" id="exampleFormControlSelect1" name="id_user">
+                                        <select class="form-control" id="group-select" placeholder="Select a group..."
+                                            name="id_user">
+
                                             <?php
                                             $id = 0;
                                             foreach($anggota_not_kematian as $i)
@@ -187,6 +227,14 @@
                                         <label for="tanggal_kematian">Tanggal Kematian</label>
                                         <input type="date" class="form-control" id="tanggal_kematian"
                                             name="tanggal_kematian">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jam_kematian">Jam Kematian</label>
+                                        <input type="time" class="form-control" id="jam_kematian" name="jam_kematian">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="usia">Usia</label>
+                                        <input type="number" class="form-control" id="usia" name="usia">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
@@ -208,6 +256,9 @@
     <!-- ./wrapper -->
 
     <?php $this->load->view('admin/components/js');?>
+
+
 </body>
+
 
 </html>

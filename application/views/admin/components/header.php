@@ -28,6 +28,26 @@
 <link rel="stylesheet" href="<?=base_Url();?>assets/admin_lte/plugins/summernote/summernote-bs4.min.css">
 <!-- Sweetalert -->
 <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
+<!-- Sweetalert -->
+<script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.5/js/standalone/selectize.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.5/css/selectize.bootstrap4.css">
+
+<script>
+var jq14 = jQuery.noConflict(true);
+
+(function($) {
+    $(document).ready(function() {
+        $("#group-select").selectize({
+            placeholder: "Search...",
+            allowClear: true
+        });
+    });
+}(jq14));
+</script>
+
 <!-- DataTables -->
 <link rel="stylesheet"
     href="<?= base_url();?>assets/admin_lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">

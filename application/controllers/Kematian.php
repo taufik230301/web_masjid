@@ -7,6 +7,7 @@ class Kematian extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('m_user');
+		$this->load->model('m_kematian');
 	}
 
 	public function view_admin()
@@ -26,9 +27,24 @@ class Kematian extends CI_Controller {
 	{
 		$id_user = $this->input->post('id_user');
 		$tanggal_kematian = $this->input->post('tanggal_kematian');
-		echo var_dump($id_user);
-		echo var_dump($tanggal_kematian);
-		die();
+		$jam_kematian = $this->input->post('jam_kematian');
+		$usia = $this->input->post('usia');
+
+
+
+		// echo var_dump($id_user);
+		// echo var_dump($tanggal_kematian);
+		// die();
+
+		$hasil = $this->m_kematian->insert_kematian($tanggal_kematian, $jam_kematian, $usia, $id_user);
+
+        if($hasil==false){
+                $this->session->set_flashdata('eror_input','eror_input');
+                redirect('Kematian/view_admin');
+        }else{
+          		$this->session->set_flashdata('input','input');
+         		 redirect('Kematian/view_admin');
+        }
 	}
 	
 }
