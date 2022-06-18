@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="logo me-auto">
                 <h1><a href="index.html">Lumia</a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
-                
+
             </div>
 
             <nav id="navbar" class="navbar order-last order-lg-0">
@@ -391,10 +391,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
                         <div class="portfolio-wrap">
                             <figure>
-                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                    class="link-preview portfolio-lightbox" title="Preview"><i
-                                        class="bx bx-plus"></i></a>
+                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-1.jpg"
+                                    class="img-fluid" alt="">
+                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-1.jpg"
+                                    data-gallery="portfolioGallery" class="link-preview portfolio-lightbox"
+                                    title="Preview"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </figure>
@@ -409,9 +410,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
                         <div class="portfolio-wrap">
                             <figure>
-                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-2.jpg" class="link-preview portfolio-lightbox"
-                                    data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-2.jpg"
+                                    class="img-fluid" alt="">
+                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-2.jpg"
+                                    class="link-preview portfolio-lightbox" data-gallery="portfolioGallery"
+                                    title="Preview"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </figure>
@@ -426,9 +429,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
                         <div class="portfolio-wrap">
                             <figure>
-                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-3.jpg" class="link-preview portfolio-lightbox"
-                                    data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-3.jpg"
+                                    class="img-fluid" alt="">
+                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-3.jpg"
+                                    class="link-preview portfolio-lightbox" data-gallery="portfolioGallery"
+                                    title="Preview"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </figure>
@@ -443,9 +448,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
                         <div class="portfolio-wrap">
                             <figure>
-                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-4.jpg" class="link-preview portfolio-lightbox"
-                                    data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-4.jpg"
+                                    class="img-fluid" alt="">
+                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-4.jpg"
+                                    class="link-preview portfolio-lightbox" data-gallery="portfolioGallery"
+                                    title="Preview"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </figure>
@@ -460,9 +467,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
                         <div class="portfolio-wrap">
                             <figure>
-                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-5.jpg" class="link-preview portfolio-lightbox"
-                                    data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-5.jpg"
+                                    class="img-fluid" alt="">
+                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-5.jpg"
+                                    class="link-preview portfolio-lightbox" data-gallery="portfolioGallery"
+                                    title="Preview"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </figure>
@@ -477,9 +486,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
                         <div class="portfolio-wrap">
                             <figure>
-                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-6.jpg" class="link-preview portfolio-lightbox"
-                                    data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-6.jpg"
+                                    class="img-fluid" alt="">
+                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-6.jpg"
+                                    class="link-preview portfolio-lightbox" data-gallery="portfolioGallery"
+                                    title="Preview"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </figure>
@@ -494,9 +505,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
                         <div class="portfolio-wrap">
                             <figure>
-                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-7.jpg" class="link-preview portfolio-lightbox"
-                                    data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-7.jpg"
+                                    class="img-fluid" alt="">
+                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-7.jpg"
+                                    class="link-preview portfolio-lightbox" data-gallery="portfolioGallery"
+                                    title="Preview"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </figure>
@@ -511,9 +524,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp" data-wow-delay="0.1s">
                         <div class="portfolio-wrap">
                             <figure>
-                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-8.jpg" class="link-preview portfolio-lightbox"
-                                    data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-8.jpg"
+                                    class="img-fluid" alt="">
+                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-8.jpg"
+                                    class="link-preview portfolio-lightbox" data-gallery="portfolioGallery"
+                                    title="Preview"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </figure>
@@ -528,9 +543,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
                         <div class="portfolio-wrap">
                             <figure>
-                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-9.jpg" class="link-preview portfolio-lightbox"
-                                    data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
+                                <img src="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-9.jpg"
+                                    class="img-fluid" alt="">
+                                <a href="<?=base_url();?>assets/public/assets/img/portfolio/portfolio-9.jpg"
+                                    class="link-preview portfolio-lightbox" data-gallery="portfolioGallery"
+                                    title="Preview"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="link-details" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </figure>
@@ -562,80 +579,90 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
+                                <br>
+                                <br>
+                                <br>
+                                <h2>Info Kematian</h2>
                                 <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i> Proin iaculis purus consequat
-                                    sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam,
-                                    ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                    risus at semper.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                    Tanggal kematian 12/12/2022
                                 </p>
-                                <img src="<?=base_url();?>assets/public/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                                <p>
+                                    Jam kematian 22:22:01
+                                </p>
                                 <h3>Saul Goodman</h3>
-                                <h4>Ceo &amp; Founder</h4>
+                                <h4>Usia 80 Tahun</h4>
                             </div>
                         </div>
                         <!-- End testimonial item -->
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
+                                <br>
+                                <br>
+                                <br>
+                                <h2>Info Kematian</h2>
                                 <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i> Export tempor illum tamen
-                                    malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum
-                                    velit fore eram velit sunt aliqua noster fugiat irure
-                                    amet legam anim culpa.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                    Tanggal kematian 12/12/2022
                                 </p>
-                                <img src="<?=base_url();?>assets/public/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                                <h3>Sara Wilsson</h3>
-                                <h4>Designer</h4>
+                                <p>
+                                    Jam kematian 22:22:01
+                                </p>
+                                <h3>Saul Goodman</h3>
+                                <h4>Usia 80 Tahun</h4>
                             </div>
                         </div>
                         <!-- End testimonial item -->
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
+                                <br>
+                                <br>
+                                <br>
+                                <h2>Info Kematian</h2>
                                 <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i> Enim nisi quem export duis
-                                    labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore
-                                    quem eram duis noster aute amet eram fore quis sint
-                                    minim.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                    Tanggal kematian 12/12/2022
                                 </p>
-                                <img src="<?=base_url();?>assets/public/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                                <h3>Jena Karlis</h3>
-                                <h4>Store Owner</h4>
+                                <p>
+                                    Jam kematian 22:22:01
+                                </p>
+                                <h3>Saul Goodman</h3>
+                                <h4>Usia 80 Tahun</h4>
                             </div>
                         </div>
                         <!-- End testimonial item -->
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
+                                <br>
+                                <br>
+                                <br>
+                                <h2>Info Kematian</h2>
                                 <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i> Fugiat enim eram quae cillum
-                                    dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor
-                                    enim duis veniam ipsum anim magna sunt elit fore quem
-                                    dolore labore illum veniam.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                    Tanggal kematian 12/12/2022
                                 </p>
-                                <img src="<?=base_url();?>assets/public/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                                <h3>Matt Brandon</h3>
-                                <h4>Freelancer</h4>
+                                <p>
+                                    Jam kematian 22:22:01
+                                </p>
+                                <h3>Saul Goodman</h3>
+                                <h4>Usia 80 Tahun</h4>
                             </div>
                         </div>
                         <!-- End testimonial item -->
 
                         <div class="swiper-slide">
                             <div class="testimonial-item">
+                                <br>
+                                <br>
+                                <br>
+                                <h2>Info Kematian</h2>
                                 <p>
-                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i> Quis quorum aliqua sint quem
-                                    legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis
-                                    sunt culpa nulla illum cillum fugiat legam esse
-                                    veniam culpa fore nisi cillum quid.
-                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                    Tanggal kematian 12/12/2022
                                 </p>
-                                <img src="<?=base_url();?>assets/public/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                                <h3>John Larson</h3>
-                                <h4>Entrepreneur</h4>
+                                <p>
+                                    Jam kematian 22:22:01
+                                </p>
+                                <h3>Saul Goodman</h3>
+                                <h4>Usia 80 Tahun</h4>
                             </div>
                         </div>
                         <!-- End testimonial item -->

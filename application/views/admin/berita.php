@@ -6,6 +6,34 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Ditambahakan!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('error_file_gambar_berita')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Format File Tidak Sesuai!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -70,18 +98,36 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            $id = 0;
+                                            foreach($berita as $i)
+                                            :
+                                            $id++;
+                                            $id_berita = $i['id_berita'];
+                                            $judul_berita = $i['judul_berita'];
+                                            $isi_berita = $i['isi_berita'];
+                                            $gambar_berita = $i['gambar_berita'];
+                                            $created_date = $i['created_date'];
+                                          
+
+                                            ?>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0
+                                                <td><?=$id?></td>
+                                                <td><?=$judul_berita?></td>
+                                                <td><?=$isi_berita?></td>
+                                                <td>
+                                                    <center> <a
+                                                            href="<?= base_url();?>assets/gambar/<?php echo $gambar_berita?>"
+                                                            target="_blank"><img
+                                                                src="<?= base_url();?>assets/gambar/<?php echo $gambar_berita?>"
+                                                                style="width: 50%"> </a></center>
                                                 </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
+                                                <td><?=$created_date?></td>
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
                                                             <a href="" class="btn btn-primary" data-toggle="modal"
-                                                                data-target="#ubah_berita">
+                                                                data-target="#ubah_berita<?=$id_berita?>">
                                                                 Edit <i class="nav-icon fas fa-edit"></i>
                                                             </a>
 
@@ -89,7 +135,8 @@
                                                     </div>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
-                                                            <a href="" data-toggle="modal" data-target="#delete_berita"
+                                                            <a href="" data-toggle="modal"
+                                                                data-target="#delete_berita<?=$id_berita?>"
                                                                 class="btn btn-danger">Hapus <i
                                                                     class="fas fa-trash"></i>
                                                             </a>
@@ -97,8 +144,8 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="ubah_berita" tabindex="-1"
+                                            <!-- Modal Ubah Data Berita -->
+                                            <div class="modal fade" id="ubah_berita<?=$id_berita?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
@@ -114,15 +161,29 @@
                                                         <div class="modal-body">
                                                             ...
                                                         </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save
-                                                                changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal fade" id="delete_berita<?=$id_berita?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Delete Data
+                                                                Berita
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            ...
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <?php endforeach;?>
                                         </tbody>
 
                                     </table>
@@ -148,7 +209,8 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="<?=base_url();?>Berita/tambah_data_admin" method="POST">
+                                <form action="<?=base_url();?>Berita/tambah_data_admin" method="POST"
+                                    enctype="multipart/form-data">
 
                                     <div class="form-group">
                                         <label for="judul_berita">Judul Berita</label>
