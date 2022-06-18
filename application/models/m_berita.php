@@ -32,4 +32,19 @@ class M_berita extends CI_Model
 
     }
 
+    public function update_berita($judul_berita, $isi_berita, $gambar_berita, $id_berita)
+    {
+
+        $this->db->trans_start();
+
+       $this->db->query("UPDATE berita SET judul_berita='$judul_berita', isi_berita='$isi_berita', gambar_berita='$gambar_berita' WHERE id_berita='$id_berita'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+
+    }
+
 }

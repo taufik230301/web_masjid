@@ -34,6 +34,26 @@
     });
     </script>
     <?php } ?>
+
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diubah!",
+        text: "Data Berhasil Diubah!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_edit')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -159,14 +179,15 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="<?=base_url();?>Berita/tambah_data_admin"
+                                                            <form action="<?=base_url();?>Berita/ubah_data_admin"
                                                                 method="POST" enctype="multipart/form-data">
-
+                                                                <input type="text" value="<?=$id_berita?>"
+                                                                    name="id_berita" hidden>
                                                                 <div class="form-group">
                                                                     <label for="judul_berita">Judul Berita</label>
                                                                     <input type="text" class="form-control"
                                                                         id="judul_berita" name="judul_berita"
-                                                                        value="<?=$judul_berita?>">
+                                                                        value="<?=$judul_berita?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="isi_berita">Isi Berita</label>
@@ -177,9 +198,10 @@
                                                                 <div class="form-group">
                                                                     <label for="gambar_berita">Gambar Berita</label>
                                                                     <input type="file" class="form-control"
-                                                                        id="gambar_berita" name="gambar_berita">
+                                                                        id="gambar_berita" name="gambar_berita" required>
                                                                     <input type="text" class="form-control"
-                                                                        id="gambar_berita_old" name="gambar_berita_old" value="<?=$gambar_berita?>" hidden>
+                                                                        id="gambar_berita_old" name="gambar_berita_old"
+                                                                        value="<?=$gambar_berita?>" hidden>
                                                                 </div>
                                                                 <button type="submit"
                                                                     class="btn btn-primary">Submit</button>
@@ -238,7 +260,7 @@
 
                                     <div class="form-group">
                                         <label for="judul_berita">Judul Berita</label>
-                                        <input type="text" class="form-control" id="judul_berita" name="judul_berita">
+                                        <input type="text" class="form-control" id="judul_berita" name="judul_berita" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="isi_berita">Isi Berita</label>
@@ -247,7 +269,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="gambar_berita">Gambar Berita</label>
-                                        <input type="file" class="form-control" id="gambar_berita" name="gambar_berita">
+                                        <input type="file" class="form-control" id="gambar_berita" name="gambar_berita" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
