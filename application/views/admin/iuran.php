@@ -10,8 +10,8 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/Loading.png"
-                alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/Loading.png" alt="AdminLTELogo"
+                height="60" width="60">
         </div>
 
         <?php $this->load->view('admin/components/navbar');?>
@@ -35,6 +35,10 @@
                                 <li class="breadcrumb-item active">Iuran</li>
                             </ol>
                         </div><!-- /.col -->
+                        <button type="button" class="btn btn-primary ml-2 mt-3" data-toggle="modal"
+                            data-target="#exampleModal">
+                            Tambah Data
+                        </button>
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -136,25 +140,51 @@
                 </div>
                 <!-- /.container-fluid -->
                 <!-- Modal -->
-                <div class="modal fade" id="delete_iuran" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Delete Data
-                                    Iuran
-                                </h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Tambah Data Kematian</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save
-                                    changes</button>
+                                <form action="<?=base_url();?>Kematian/tambah_data_admin" method="POST">
+                                    <div class="form-group">
+                                        <label for="id_user">Anggota</label>
+                                        <select class="form-control" id="group-select" placeholder="Select a group..."
+                                            name="id_user">
+
+                                            <?php
+                                            $id = 0;
+                                            foreach($anggota as $i)
+                                            :
+                                            $id++;
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $id_user_detail = $i['id_user_detail'];
+                                            ?>
+                                            <option value="<?=$id_user_detail?>"><?=$nama_lengkap?></option>
+                                            <?php endforeach;?>
+
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tanggal_kematian">Tanggal Kematian</label>
+                                        <input type="date" class="form-control" id="tanggal_kematian"
+                                            name="tanggal_kematian">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jam_kematian">Jam Kematian</label>
+                                        <input type="time" class="form-control" id="jam_kematian" name="jam_kematian">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="usia">Usia</label>
+                                        <input type="number" class="form-control" id="usia" name="usia">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
                             </div>
                         </div>
                     </div>
