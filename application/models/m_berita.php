@@ -47,4 +47,19 @@ class M_berita extends CI_Model
 
     }
 
+    public function delete_berita($id_berita)
+    {
+
+        $this->db->trans_start();
+
+       $this->db->query("DELETE FROM berita WHERE id_berita='$id_berita'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+
+    }
+
 }

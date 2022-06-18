@@ -110,6 +110,29 @@ class Berita extends CI_Controller {
 
 
 	}
+
+	public function hapus_data_admin()
+	{
+		$id_berita = $this->input->post('id_berita');
+
+		$hasil = $this->m_berita->delete_berita($id_berita);
+
+		
+		$path = './assets/gambar/';
+
+			if($hasil==false){
+
+				$this->session->set_flashdata('eror_delete','eror_delete');
+				redirect('Berita/view_admin');
+
+			}else{
+
+                @unlink($path.$this->input->post('gambar_berita_old'));
+				$this->session->set_flashdata('delete','delete');
+				redirect('Berita/view_admin');
+        
+			}
+	}
    
 	
 }

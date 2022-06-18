@@ -6,6 +6,25 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('delete')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Dihapus!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_delete')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <?php if ($this->session->flashdata('input')){ ?>
     <script>
     swal({
@@ -198,7 +217,8 @@
                                                                 <div class="form-group">
                                                                     <label for="gambar_berita">Gambar Berita</label>
                                                                     <input type="file" class="form-control"
-                                                                        id="gambar_berita" name="gambar_berita" required>
+                                                                        id="gambar_berita" name="gambar_berita"
+                                                                        required>
                                                                     <input type="text" class="form-control"
                                                                         id="gambar_berita_old" name="gambar_berita_old"
                                                                         value="<?=$gambar_berita?>" hidden>
@@ -224,7 +244,26 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            ...
+                                                            <form action="<?= base_url();?>Berita/hapus_data_admin"
+                                                                method="post" enctype="multipart/form-data">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <input type="hidden" name="id_berita"
+                                                                            value="<?php echo $id_berita?>" />
+                                                                        <input type="text" name="gambar_berita_old"
+                                                                            value="<?=$gambar_berita?>" hidden>
+
+                                                                        <p>Apakah kamu yakin ingin menghapus data
+                                                                            ini?</i></b></p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger ripple"
+                                                                        data-dismiss="modal">Tidak</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-success ripple save-category">Ya</button>
+                                                                </div>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -260,7 +299,8 @@
 
                                     <div class="form-group">
                                         <label for="judul_berita">Judul Berita</label>
-                                        <input type="text" class="form-control" id="judul_berita" name="judul_berita" required>
+                                        <input type="text" class="form-control" id="judul_berita" name="judul_berita"
+                                            required>
                                     </div>
                                     <div class="form-group">
                                         <label for="isi_berita">Isi Berita</label>
@@ -269,7 +309,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="gambar_berita">Gambar Berita</label>
-                                        <input type="file" class="form-control" id="gambar_berita" name="gambar_berita" required>
+                                        <input type="file" class="form-control" id="gambar_berita" name="gambar_berita"
+                                            required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
