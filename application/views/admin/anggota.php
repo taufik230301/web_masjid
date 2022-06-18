@@ -66,6 +66,26 @@
     </script>
     <?php } ?>
 
+    <?php if ($this->session->flashdata('verifikasi')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Di Update Status Verifikasi!",
+        text: "Data Berhasil Di Update Status Verifikasi!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_verifikasi')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <?php if ($this->session->flashdata('error_file_kk')){ ?>
     <script>
     swal({
@@ -146,6 +166,7 @@
                                                 <th>Status Verifikasi</th>
                                                 <th>Tanggal Register</th>
                                                 <th>Aksi</th>
+                                                <th>Verifikasi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -249,6 +270,24 @@
                                                                 data-target="#delete_anggota<?=$id_user?>"
                                                                 class="btn btn-danger">Hapus <i
                                                                     class="fas fa-trash"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-primary" data-toggle="modal"
+                                                                data-target="#setuju<?= $id_user ?>">
+                                                                <i class="fas fa-check"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" data-toggle="modal"
+                                                                data-target="#tidak_setuju<?= $id_user ?>"
+                                                                class="btn btn-danger"><i class="fas fa-times"></i>
                                                             </a>
                                                         </div>
                                                     </div>
@@ -369,6 +408,89 @@
                                                                     </div>
                                                                     <button type="submit"
                                                                         class="btn btn-primary">Submit</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Modal Setuju Data Anggota -->
+                                                <div class="modal fade" id="setuju<?= $id_user ?>" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Setujui
+                                                                Data Anggota
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+
+                                                            <div class="modal-body">
+                                                                <form
+                                                                    action="<?php echo base_url()?>Anggota/acc_anggota/4"
+                                                                    method="post" enctype="multipart/form-data">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            
+                                                                            <input type="hidden" name="id_user"
+                                                                                value="<?php echo $id_user?>" />
+
+                                                                            <p>Apakah kamu yakin ingin Menyetujui Data Anggota
+                                                                                ini?</i></b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button"
+                                                                            class="btn btn-danger ripple"
+                                                                            data-dismiss="modal">Tidak</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-success ripple save-category">Ya</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal Tidak Setuju Data Anggota -->
+                                                <div class="modal fade" id="tidak_setuju<?= $id_user ?>" tabindex="-1"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Tolak
+                                                                Data Anggota
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+
+                                                            <div class="modal-body">
+                                                                <form
+                                                                    action="<?php echo base_url()?>Anggota/acc_anggota/3"
+                                                                    method="post" enctype="multipart/form-data">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                           
+                                                                            <input type="hidden" name="id_user"
+                                                                                value="<?php echo $id_user?>" />
+
+                                                                            <p>Apakah kamu yakin ingin Menolak Data Anggota
+                                                                                ini?</i></b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button"
+                                                                            class="btn btn-danger ripple"
+                                                                            data-dismiss="modal">Tidak</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-success ripple save-category">Ya</button>
+                                                                    </div>
                                                                 </form>
                                                             </div>
                                                         </div>

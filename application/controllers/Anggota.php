@@ -181,6 +181,28 @@ class Anggota extends CI_Controller {
         
 			}
 	}
+
+	public function acc_anggota($id_status_verifikasi)
+	{
+
+		$id_user =  $this->input->post('id_user');
+
+		$hasil = $this->m_user->update_user_status_verifikasi($id_status_verifikasi, $id_user);
+
+	
+			if($hasil==false){
+
+				$this->session->set_flashdata('eror_verifikasi','eror_verifikasi');
+				redirect('Anggota/view_admin');
+
+			}else{
+
+				@unlink($path.$this->input->post('foto_kk_old'));
+				$this->session->set_flashdata('verifikasi','verifikasi');
+				redirect('Anggota/view_admin');
+        
+			}
+	}
     
 	
 }
