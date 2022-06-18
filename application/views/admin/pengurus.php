@@ -192,7 +192,43 @@
                                                                 src="<?= base_url();?>assets/foto/<?php echo $foto_kk?>"
                                                                 style="width: 50%"> </a></center>
                                                 </td>
-                                                <td><?=$id_status_verifikasi?></td>
+                                                <td><?php if($id_status_verifikasi == 1){ ?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-danger" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Belum Diverifikasi
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }elseif($id_status_verifikasi == 2) {?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-warning" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Menunggu Diverifikasi
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }elseif($id_status_verifikasi == 3) {?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-danger" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Data Ditolak
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }elseif($id_status_verifikasi == 4) {?>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-success" data-toggle="modal"
+                                                                data-target="#edit_data_pegawai">
+                                                                Data Diterima
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <?php }?></td>
                                                 <td><?=$tanggal_registered?></td>
                                                 <td>
                                                     <div class="table-responsive">

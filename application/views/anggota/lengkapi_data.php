@@ -202,7 +202,12 @@
                                     <?php } ?>
 
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <?php  if( $id_status_verifikasi == '2' OR $id_status_verifikasi == '4'){
+                                        echo '<br><br>';
+                                    }else{
+                                        echo '<button type="submit" class="btn btn-primary">Submit</button>';
+                                    }  ?>
+                                
                             </form>
                             <?php endforeach;?>
                         </div>
