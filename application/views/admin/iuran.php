@@ -151,11 +151,11 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="<?=base_url();?>Kematian/tambah_data_admin" method="POST">
+                                <form action="<?=base_url();?>Iuran/tambah_data_admin" method="POST">
                                     <div class="form-group">
                                         <label for="id_user">Anggota</label>
                                         <select class="form-control" id="group-select" placeholder="Select a group..."
-                                            name="id_user">
+                                            name="id_user" required>
 
                                             <?php
                                             $id = 0;
@@ -171,17 +171,21 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="tanggal_kematian">Tanggal Kematian</label>
-                                        <input type="date" class="form-control" id="tanggal_kematian"
-                                            name="tanggal_kematian">
+                                        <label for="bulan">Bulan</label>
+                                        <input type="text" class="form-control" id="bulan" name="bulan" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="jam_kematian">Jam Kematian</label>
-                                        <input type="time" class="form-control" id="jam_kematian" name="jam_kematian">
+                                        <label for="tahun">Tahun</label>
+                                        <input type="text" class="form-control" id="tahun" name="tahun" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="usia">Usia</label>
-                                        <input type="number" class="form-control" id="usia" name="usia">
+                                        <label for="tanggal_iuran">Tanggal Iuran</label>
+                                        <input type="date" class="form-control" id="tanggal_iuran" name="tanggal_iuran" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="jumlah_iuran">Jumlah Iuran</label>
+                                        <input type="text" class="form-control" id="jumlah_iuran" name="jumlah_iuran" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
@@ -193,14 +197,6 @@
             <!-- /.content -->
             <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
-            </div>
-        </footer>
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

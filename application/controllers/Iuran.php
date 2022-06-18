@@ -15,7 +15,15 @@ class Iuran extends CI_Controller {
 	{
 		$data['anggota'] = $this->m_user->read_all_anggota()->result_array();
 		$this->load->view('admin/iuran', $data);
-    }
+	}
+	
+	public function tambah_data_admin()
+	{
+		$id_user = $this->input->post('id_user');
+		echo var_dump($id_user);
+		die();
+
+	}
     
     public function view_bendahara()
 	{
