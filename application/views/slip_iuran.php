@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Document</title>
+    <title>Slip Iuran Bulnana Anggota</title>
     <style>
     td {
         padding-top: 20px;
@@ -34,7 +34,7 @@
     <h4 style="text-align: center; margin-bottom:-15px;">KECAMATAN BLABLABAL</h4>
     <p style="text-align: center; margin-bottom:-15px;">KELURAHAN BLA BLA</p>
     <p style="text-align: center; margin-bottom:-10px;">SLIP IURAN BULANAN ANGGOTA</p>
-    <p style="text-align: left; margin-bottom:-15px;">NAMA ANGGOTA : Rahman</p>
+    <p style="text-align: left; margin-bottom:-15px;">Nama Anggota : Rahman</p>
     <p style="text-align: left; margin-bottom:-15px;">Alamat : Jl. Sekip</p>
     <p style="text-align: left; margin-bottom:-30px;">No Telp : 08217612651526</p>
     <p style="text-align: center;">&nbsp;</p>
@@ -54,7 +54,7 @@
     <p style="text-align: right; margin-top:-40px; margin-right:45px;">KETUA PENGURUS</p>
     <p style="text-align: right;">&nbsp;</p>
     <p style="text-align: right;">&nbsp;</p>
-    <p style="text-align: right;">&nbsp;</p>
+    <p style="text-align: right; margin-top:-40px; margin-right:105px;">Ttd</p>
 </body>
 
 </html>
