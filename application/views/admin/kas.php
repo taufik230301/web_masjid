@@ -6,6 +6,25 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Ditambahakan!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_input')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -18,7 +37,12 @@
 
         <?php $this->load->view('admin/components/sidebar');?>
 
-
+        <?php 
+        function rupiah($angka) {
+    $hasil = 'Rp ' . number_format($angka, 2, ",", ".");
+    return $hasil;
+    } 
+    ?>
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -69,19 +93,36 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            $id = 0;
+                                            foreach($kas as $i)
+                                            :
+                                            $id++;
+                                            $id_kas = $i['id_kas'];
+                                            $jenis_kas = $i['jenis_kas'];
+                                            $nominal = $i['nominal'];
+                                            $keterangan_kas = $i['keterangan_kas'];
+                                            $tanggal_transaksi = $i['tanggal_transaksi'];
+
+                                            ?>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0
-                                                </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
+                                                <td><?=$id?></td>
+                                                <td><?=$jenis_kas?></td>
+                                                <td><?=rupiah($nominal)?></td>
+                                                <td><?=$keterangan_kas?></td>
+                                                <td><?=$tanggal_transaksi?></td>
                                             </tr>
+                                            <?php endforeach?>
                                         </tbody>
 
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
+                            </div>
+                            <div class="card p-4">
+                                <h2 class="text-danger">Pengeluaran : <b> <?=rupiah($kas_kredit['nominal'])?> </b></h2>
+                                <h2 class="text-success">Pemasukan :<b> <?=rupiah($kas_debit['nominal'])?> </b></h2>
+                                <h2 class="text-primary">Total Kas Sekarang :<b> <?=rupiah($kas_debit['nominal']-$kas_kredit['nominal']) ?> </b></h2>
                             </div>
                             <!-- /.card -->
                         </div>
@@ -105,8 +146,8 @@
                                     <div class="form-group">
                                         <label for="jenis_kas">Jenis Kas</label>
                                         <select class="form-control" id="jenis_kas" name="jenis_kas">
-                                            <option value="Debit">Debit</option>
-                                            <option value="Kredit">Kredit</option>
+                                            <option value="Debit">Debit (Pemasukan)</option>
+                                            <option value="Kredit">Kredit (Pengeluaran)</option>
                                         </select>
                                     </div>
                                     <div class="form-group">

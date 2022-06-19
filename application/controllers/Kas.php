@@ -3,11 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Kas extends CI_Controller {
 
-	public
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('m_kas');
+	}
 
 	public function view_admin()
 	{
-		$this->load->view('admin/kas');
+		$data['kas'] = $this->m_kas->read_all_kas()->result_array();
+		$data['kas_kredit'] = $this->m_kas->read_all_kas_kredit()->row_array();
+		$data['kas_debit'] = $this->m_kas->read_all_kas_debit()->row_array();
+		
+		$this->load->view('admin/kas', $data);
 	}
 	
 	public function tambah_data_admin()
@@ -21,10 +29,10 @@ class Kas extends CI_Controller {
 
         if($hasil==false){
                 $this->session->set_flashdata('eror_input','eror_input');
-                redirect('Iuran/view_admin');
+                redirect('Kas/view_admin');
         }else{
           		$this->session->set_flashdata('input','input');
-         		 redirect('Iuran/view_admin');
+         		 redirect('Kas/view_admin');
         }
 
 
