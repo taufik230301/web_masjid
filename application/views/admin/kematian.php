@@ -287,7 +287,7 @@
                                     <div class="form-group">
                                         <label for="id_user">Anggota</label>
                                         <select class="form-control" id="group-select" placeholder="Select a group..."
-                                            name="id_user">
+                                            name="id_user" required>
 
                                             <?php
                                             $id = 0;
@@ -305,15 +305,15 @@
                                     <div class="form-group">
                                         <label for="tanggal_kematian">Tanggal Kematian</label>
                                         <input type="date" class="form-control" id="tanggal_kematian"
-                                            name="tanggal_kematian">
+                                            name="tanggal_kematian" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="jam_kematian">Jam Kematian</label>
-                                        <input type="time" class="form-control" id="jam_kematian" name="jam_kematian">
+                                        <input type="time" class="form-control" id="jam_kematian" name="jam_kematian" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="usia">Usia</label>
-                                        <input type="number" class="form-control" id="usia" name="usia">
+                                        <input type="number" class="form-control" id="usia" name="usia" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>

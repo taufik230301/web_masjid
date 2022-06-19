@@ -119,6 +119,16 @@ class M_user extends CI_Model
              return false;
     }
 
+    public function read_all_anggota_iuran()
+    {
+
+        $hasil=$this->db->query("SELECT * FROM user 
+        JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail
+        JOIN iuran ON user.id_user = iuran.id_user WHERE id_user_level=3 AND nama_lengkap IS NOT NULL");
+        return $hasil;
+
+    }
+
     public function update_user_detail($id_user, $nama_lengkap, $jabatan, $no_kk, $no_ktp, $jenis_kelamin, $agama, $no_hp, $alamat, $tempat_lahir, $tanggal_lahir, $foto_kk, $id_status_verifikasi)
     {
         $this->db->trans_start();
