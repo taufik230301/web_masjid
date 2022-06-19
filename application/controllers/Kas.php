@@ -122,6 +122,23 @@ class Kas extends CI_Controller {
 
 
 	}
+
+	public function hapus_data_bendahara()
+	{
+		$id_kas = $this->input->post('id_kas');
+
+		$hasil = $this->m_kas->delete_kas($id_kas);
+
+        if($hasil==false){
+                $this->session->set_flashdata('eror_delete','eror_delete');
+                redirect('Kas/view_bendahara');
+        }else{
+          		$this->session->set_flashdata('delete','delete');
+         		 redirect('Kas/view_bendahara');
+        }
+
+
+	}
     
     public function view_anggota()
 	{
