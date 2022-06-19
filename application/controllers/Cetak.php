@@ -18,6 +18,16 @@ class Cetak extends CI_Controller {
 		$this->pdf->setPaper('A4', 'landscape');
 		$this->pdf->filename = "laporan-kas.pdf";
 		$this->pdf->load_view('laporan_kas', $data);
+	}
+	
+	public function slip_iuran_anggota()
+	{
+	
+		$this->load->library('pdf');
+	
+		$this->pdf->setPaper('A5', 'landscape');
+		$this->pdf->filename = "laporan-kas.pdf";
+		$this->pdf->load_view('slip_iuran');
     }
     
 	

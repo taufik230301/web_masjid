@@ -5,10 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    td {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 5px;
+    }
+
+    td:first-child {
+        padding-left: 5px;
+        padding-right: 0;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+    </style>
 </head>
 
 <body>
-    <table style="height: 50px;" width="1026">
+    <h2 style="text-align: center;">LAPORAN KAS MASJID AL-IKMAL</h2>
+    <h2 style="text-align: center;">Bulan Januari</h2>
+    <table style="height: 50px;" width="500">
         <tbody>
             <tr>
                 <td style="width: 198.875px;">No</td>
