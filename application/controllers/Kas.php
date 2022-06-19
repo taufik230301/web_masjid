@@ -37,6 +37,26 @@ class Kas extends CI_Controller {
 
 
 	}
+
+	public function ubah_data_admin()
+	{
+		$id_kas = $this->input->post('id_kas');
+		$jenis_kas = $this->input->post('jenis_kas');
+		$nominal = $this->input->post('nominal');
+		$keterangan_kas = $this->input->post('keterangan_kas');
+
+		$hasil = $this->m_kas->update_kas($jenis_kas, $nominal, $keterangan_kas, $id_kas);
+
+        if($hasil==false){
+                $this->session->set_flashdata('eror_edit','eror_edit');
+                redirect('Kas/view_admin');
+        }else{
+          		$this->session->set_flashdata('edit','edit');
+         		 redirect('Kas/view_admin');
+        }
+
+
+	}
     
     public function view_bendahara()
 	{

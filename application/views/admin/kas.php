@@ -140,7 +140,7 @@
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="exampleModalLabel">Ubah Data
-                                                                Kematian</h5>
+                                                                Kas</h5>
                                                             <button type="button" class="close" data-dismiss="modal"
                                                                 aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
@@ -149,6 +149,7 @@
                                                         <div class="modal-body">
                                                             <form action="<?=base_url();?>Kas/ubah_data_admin"
                                                                 method="POST">
+                                                                <input type="text" name="id_kas" value="<?=$id_kas?>" hidden>
                                                                 <div class="form-group">
                                                                     <label for="jenis_kas">Jenis Kas</label>
                                                                     <select class="form-control" id="jenis_kas"

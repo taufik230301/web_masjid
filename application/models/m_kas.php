@@ -16,6 +16,20 @@ class M_kas extends CI_Model
             return false;
     }
 
+    public function update_kas($jenis_kas, $nominal, $keterangan_kas, $id_kas)
+    {
+        
+        $this->db->trans_start();
+
+       $this->db->query("UPDATE kas SET jenis_kas='$jenis_kas', nominal='$nominal', keterangan_kas='$keterangan_kas' WHERE id_kas='$id_kas'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
     
     public function read_all_kas()
     {
