@@ -14,9 +14,16 @@ class Iuran extends CI_Controller {
 
 	public function view_admin()
 	{
-		$data['anggota'] = $this->m_user->read_all_anggota()->result_array();
-		$data['anggota_iuran'] = $this->m_user->read_all_anggota_iuran()->result_array();
-		$this->load->view('admin/iuran', $data);
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+			$data['anggota'] = $this->m_user->read_all_anggota()->result_array();
+			$data['anggota_iuran'] = $this->m_user->read_all_anggota_iuran()->result_array();
+			$this->load->view('admin/iuran', $data);
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
 	}
 	
 	public function tambah_data_admin()
