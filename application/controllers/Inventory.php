@@ -102,9 +102,18 @@ class Inventory extends CI_Controller {
 
     public function view_anggota()
 	{
-		$data['inventory'] = $this->m_inventory->read_all_inventory()->result_array();
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
 
-		$this->load->view('anggota/inventory', $data);
+			$data['inventory'] = $this->m_inventory->read_all_inventory()->result_array();
+
+			$this->load->view('anggota/inventory', $data);
+			
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
     }
 	
 }

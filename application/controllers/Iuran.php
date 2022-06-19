@@ -104,9 +104,16 @@ class Iuran extends CI_Controller {
     
     public function view_bendahara()
 	{
-		$data['anggota'] = $this->m_user->read_all_anggota()->result_array();
-		$data['anggota_iuran'] = $this->m_user->read_all_anggota_iuran()->result_array();
-		$this->load->view('bendahara/iuran', $data);
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
+			$data['anggota'] = $this->m_user->read_all_anggota()->result_array();
+			$data['anggota_iuran'] = $this->m_user->read_all_anggota_iuran()->result_array();
+			$this->load->view('bendahara/iuran', $data);
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
 	}
 	
 	public function tambah_data_bendahara()
@@ -187,7 +194,16 @@ class Iuran extends CI_Controller {
     
     public function view_anggota()
 	{
-		$this->load->view('anggota/iuran');
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
+			$this->load->view('anggota/iuran');
+
+				
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
 	}
 	
 }

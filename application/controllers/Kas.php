@@ -85,10 +85,20 @@ class Kas extends CI_Controller {
     
     public function view_bendahara()
 	{
-		$data['kas'] = $this->m_kas->read_all_kas()->result_array();
-		$data['kas_kredit'] = $this->m_kas->read_all_kas_kredit()->row_array();
-		$data['kas_debit'] = $this->m_kas->read_all_kas_debit()->row_array();
-		$this->load->view('bendahara/kas', $data);
+
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
+			
+			$data['kas'] = $this->m_kas->read_all_kas()->result_array();
+			$data['kas_kredit'] = $this->m_kas->read_all_kas_kredit()->row_array();
+			$data['kas_debit'] = $this->m_kas->read_all_kas_debit()->row_array();
+			$this->load->view('bendahara/kas', $data);
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
 	}
 	
 	public function tambah_data_bendahara()
@@ -150,7 +160,15 @@ class Kas extends CI_Controller {
     
     public function view_anggota()
 	{
-		$this->load->view('anggota/kas');
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
+			$this->load->view('anggota/kas');
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
 	}
 	
 }
