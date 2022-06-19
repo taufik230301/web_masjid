@@ -6,6 +6,25 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diubah!",
+        text: "Data Berhasil Diubah!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_edit')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <?php if ($this->session->flashdata('input')){ ?>
     <script>
     swal({
@@ -149,7 +168,8 @@
                                                         <div class="modal-body">
                                                             <form action="<?=base_url();?>Kas/ubah_data_admin"
                                                                 method="POST">
-                                                                <input type="text" name="id_kas" value="<?=$id_kas?>" hidden>
+                                                                <input type="text" name="id_kas" value="<?=$id_kas?>"
+                                                                    hidden>
                                                                 <div class="form-group">
                                                                     <label for="jenis_kas">Jenis Kas</label>
                                                                     <select class="form-control" id="jenis_kas"
@@ -158,7 +178,8 @@
                                                                                             echo 'selected';
                                                                                         }else{
                                                                                             echo '';
-                                                                                        }  ?>>Debit (Pemasukan)</option>
+                                                                                        }  ?>>Debit (Pemasukan)
+                                                                        </option>
                                                                         <option value="Kredit" <?php  if($jenis_kas == 'Kredit'){
                                                                                             echo 'selected';
                                                                                         }else{
