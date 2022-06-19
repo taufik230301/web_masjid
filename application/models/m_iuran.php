@@ -29,6 +29,19 @@ class M_iuran extends CI_Model
             return false;
     }
 
+    public function delete_iuran($id_iuran)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("DELETE FROM iuran WHERE id_iuran='$id_iuran'");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+    }
+
    
 
 

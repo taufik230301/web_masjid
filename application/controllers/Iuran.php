@@ -73,7 +73,27 @@ class Iuran extends CI_Controller {
 
 	}
 
-	
+	public function hapus_data_admin()
+	{
+		$id_iuran = $this->input->post('id_iuran');
+
+		// echo var_dump($id_user);
+		// echo var_dump($bulan);
+		// echo var_dump($tahun);
+		// echo var_dump($tanggal_iuran);
+		// echo var_dump($jumlah_iuran);
+		// die();
+
+		$hasil = $this->m_iuran->delete_iuran($id_iuran);
+
+        if($hasil==false){
+                $this->session->set_flashdata('eror_delete','eror_delete');
+                redirect('Iuran/view_admin');
+        }else{
+          		$this->session->set_flashdata('delete','delete');
+         		 redirect('Iuran/view_admin');
+        }
+	}
     
     public function view_bendahara()
 	{
