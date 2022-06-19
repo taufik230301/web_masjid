@@ -30,6 +30,20 @@ class M_kas extends CI_Model
             return false;
     }
 
+    public function delete_kas($id_kas)
+    {
+        
+        $this->db->trans_start();
+
+       $this->db->query("DELETE FROM kas WHERE id_kas='$id_kas'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
     
     public function read_all_kas()
     {

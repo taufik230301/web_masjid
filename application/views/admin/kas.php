@@ -44,6 +44,25 @@
     });
     </script>
     <?php } ?>
+    <?php if ($this->session->flashdata('delete')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Dihapus!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_delete')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -153,6 +172,44 @@
                                                 </td>
                                             </tr>
                                             <!-- /.container-fluid -->
+                                            <!-- Modal Delete Data Kas -->
+                                            <div class="modal fade" id="delete_kas<?=$id_kas?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Hapus
+                                                                Data
+                                                                Kas
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="<?= base_url();?>Kas/hapus_data_admin"
+                                                                method="post" enctype="multipart/form-data">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <input type="hidden" name="id_kas"
+                                                                            value="<?php echo $id_kas?>" />
+
+                                                                        <p>Apakah kamu yakin ingin menghapus data
+                                                                            ini?</i></b></p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger ripple"
+                                                                        data-dismiss="modal">Tidak</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-success ripple save-category">Ya</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="modal fade" id="ubah_kas<?=$id_kas?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
@@ -226,6 +283,7 @@
                     <!-- /.row -->
                 </div>
                 <!-- /.container-fluid -->
+
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
