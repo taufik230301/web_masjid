@@ -90,6 +90,7 @@
                                                 <th>Nominal</th>
                                                 <th>Keterangan Kas</th>
                                                 <th>Tanggal Transaksi</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -111,7 +112,78 @@
                                                 <td><?=rupiah($nominal)?></td>
                                                 <td><?=$keterangan_kas?></td>
                                                 <td><?=$tanggal_transaksi?></td>
+                                                <td>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-primary" data-toggle="modal"
+                                                                data-target="#ubah_kas<?=$id_kas?>">
+                                                                Edit <i class="nav-icon fas fa-edit"></i>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" data-toggle="modal"
+                                                                data-target="#delete_kas<?=$id_kas?>"
+                                                                class="btn btn-danger">Hapus <i
+                                                                    class="fas fa-trash"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr>
+                                            <!-- /.container-fluid -->
+                                            <div class="modal fade" id="ubah_kas<?=$id_kas?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Ubah Data
+                                                                Kematian</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="<?=base_url();?>Kas/ubah_data_admin"
+                                                                method="POST">
+                                                                <div class="form-group">
+                                                                    <label for="jenis_kas">Jenis Kas</label>
+                                                                    <select class="form-control" id="jenis_kas"
+                                                                        name="jenis_kas">
+                                                                        <option value="Debit" <?php  if($jenis_kas == 'Debit'){
+                                                                                            echo 'selected';
+                                                                                        }else{
+                                                                                            echo '';
+                                                                                        }  ?>>Debit (Pemasukan)</option>
+                                                                        <option value="Kredit" <?php  if($jenis_kas == 'Kredit'){
+                                                                                            echo 'selected';
+                                                                                        }else{
+                                                                                            echo '';
+                                                                                        }  ?>>Kredit (Pengeluaran)
+                                                                        </option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="nominal">Nominal</label>
+                                                                    <input type="text" class="form-control" id="nominal"
+                                                                        name="nominal" value="<?=$nominal?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="keterangan_kas">Keterangan Kas</label>
+                                                                    <textarea class="form-control" id="keterangan_kas"
+                                                                        rows="3" name="keterangan_kas"
+                                                                        required><?=$keterangan_kas?></textarea>
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <?php endforeach?>
                                         </tbody>
 
@@ -122,7 +194,8 @@
                             <div class="card p-4">
                                 <h2 class="text-danger">Pengeluaran : <b> <?=rupiah($kas_kredit['nominal'])?> </b></h2>
                                 <h2 class="text-success">Pemasukan :<b> <?=rupiah($kas_debit['nominal'])?> </b></h2>
-                                <h2 class="text-primary">Total Kas Sekarang :<b> <?=rupiah($kas_debit['nominal']-$kas_kredit['nominal']) ?> </b></h2>
+                                <h2 class="text-primary">Total Kas Sekarang :<b>
+                                        <?=rupiah($kas_debit['nominal']-$kas_kredit['nominal']) ?> </b></h2>
                             </div>
                             <!-- /.card -->
                         </div>
