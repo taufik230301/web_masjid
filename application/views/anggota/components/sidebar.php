@@ -66,7 +66,12 @@
                                  <p>Lengkapi Data</p>
                              </a>
                          </li>
-                         <li class="nav-item">
+                         <li class="nav-item" style="<?php if($anggota["id_status_verifikasi"] == 4){
+                            echo "";
+                         }else{
+                            echo "display:none;";
+                         }
+                         ?>">
                              <a href="<?=base_url();?>Cetak/kartu_anggota" class="nav-link">
                                  <i class="nav-icon fas fa-users"></i>
                                  <p>Cetak Kartu Anggota</p>

@@ -11,7 +11,8 @@ class Lengkapi_Data extends CI_Controller {
 	public function view_anggota()
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
-			$data['anggota'] = $this->m_user->read_all_anggota_by_id_user($this->session->userdata('id_user'))->result_array();
+			$data['anggota_data'] = $this->m_user->read_all_anggota_by_id_user($this->session->userdata('id_user'))->result_array();
+			$data['anggota'] = $this->m_user->read_all_anggota_by_id_user($this->session->userdata('id_user'))->row_array();
 
 			$this->load->view('anggota/lengkapi_data', $data);
 		}else{

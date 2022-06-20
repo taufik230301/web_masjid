@@ -7,6 +7,7 @@ class Kas extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('m_kas');
+		$this->load->model('m_user');
 	}
 
 	public function view_admin()
@@ -161,7 +162,11 @@ class Kas extends CI_Controller {
     public function view_anggota()
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
-			$this->load->view('anggota/kas');
+			$data['anggota'] = $this->m_user->read_all_anggota_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['kas'] = $this->m_kas->read_all_kas()->result_array();
+			$data['kas_kredit'] = $this->m_kas->read_all_kas_kredit()->row_array();
+			$data['kas_debit'] = $this->m_kas->read_all_kas_debit()->row_array();
+			$this->load->view('anggota/kas', $data);
 
 		}else{
 

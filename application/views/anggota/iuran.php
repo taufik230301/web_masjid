@@ -6,12 +6,69 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Ditambahakan!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_input')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diubah!",
+        text: "Data Berhasil Diubah!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_edit')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('delete')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Dihapus!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_delete')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/Loading.png"
-                alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/Loading.png" alt="AdminLTELogo"
+                height="60" width="60">
         </div>
 
         <?php $this->load->view('anggota/components/navbar');?>
@@ -35,6 +92,10 @@
                                 <li class="breadcrumb-item active">Iuran</li>
                             </ol>
                         </div><!-- /.col -->
+                        <button type="button" class="btn btn-primary ml-2 mt-3" data-toggle="modal"
+                            data-target="#exampleModal">
+                            Tambah Data
+                        </button>
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -45,7 +106,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-                           
+
                             <!-- /.card -->
 
                             <div class="card">
@@ -63,20 +124,41 @@
                                                 <th>Tahun</th>
                                                 <th>Tanggal Iuran</th>
                                                 <th>Jumlah Iuran</th>
+                                                <th>Cetak</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            $id = 0;
+                                            foreach($anggota_iuran as $i)
+                                            :
+                                            $id++;
+                                            $id_user = $i['id_user'];
+                                            $id_iuran = $i['id_iuran'];
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $bulan = $i['bulan'];
+                                            $tahun = $i['tahun'];
+                                            $tanggal_iuran = $i['tanggal_iuran'];
+                                            $jumlah_iuran = $i['jumlah_iuran'];
+                                            
+                                          
+
+                                            ?>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0
-                                                </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td>X</td>
+                                                <td><?=$id?></td>
+                                                <td><?=$nama_lengkap?></td>
+                                                <td><?=$bulan?></td>
+                                                <td><?=$tahun?></td>
+                                                <td><?=$tanggal_iuran?></td>
+                                                <td><?=$jumlah_iuran?></td>
+                                                <td><a href="<?=base_url();?>Cetak/slip_iuran_anggota/<?= $id_iuran ?>" class="btn btn-primary">
+                                                        Cetak <i class="nav-icon fas fa-print"></i>
+                                                    </a></td>
                                             </tr>
+
+                                            <?php endforeach;?>
                                         </tbody>
-                                       
+
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
@@ -88,18 +170,11 @@
                     <!-- /.row -->
                 </div>
                 <!-- /.container-fluid -->
+
             </section>
             <!-- /.content -->
             <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
-            </div>
-        </footer>
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

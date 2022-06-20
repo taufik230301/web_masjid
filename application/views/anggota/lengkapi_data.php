@@ -66,7 +66,7 @@
                         <div class="col-12">
                             <?php
                                             $id = 0;
-                                            foreach($anggota as $i)
+                                            foreach($anggota_data as $i)
                                             :
                                             $id++;
                                             $id_user = $i['id_user'];
