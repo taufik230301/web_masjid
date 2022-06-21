@@ -91,11 +91,7 @@
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active">Iuran</li>
                             </ol>
-                        </div><!-- /.col -->
-                        <button type="button" class="btn btn-primary ml-2 mt-3" data-toggle="modal"
-                            data-target="#exampleModal">
-                            Tambah Data
-                        </button>
+                        </div>
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>

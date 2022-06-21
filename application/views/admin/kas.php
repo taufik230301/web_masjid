@@ -97,11 +97,38 @@
                                 <li class="breadcrumb-item active">Kas</li>
                             </ol>
                         </div><!-- /.col -->
+
                         <button type="button" class="btn btn-primary ml-2 mt-3" data-toggle="modal"
                             data-target="#exampleModal">
                             Tambah Data
                         </button>
                     </div><!-- /.row -->
+                    <div class="row mb-3 mt-3 ml-2">
+                        <form action="<?=base_url();?>Cetak/laporan_perbulan" method="POST">
+                            <div class="form-group">
+                                <div class="col">
+                                    <label for="bulan">Pilih Bulan</label>
+                                    <select class="form-control" id="bulan" name="bulan">
+                                        <option value="1">Januari</option>
+                                        <option value="2">Februari</option>
+                                        <option value="3">Maret</option>
+                                        <option value="4">April</option>
+                                        <option value="5">Mei</option>
+                                        <option value="6">Juni</option>
+                                        <option value="7">Juli</option>
+                                        <option value="8">Agustus</option>
+                                        <option value="9">September</option>
+                                        <option value="10">Oktober</option>
+                                        <option value="11">November</option>
+                                        <option value="12">Desember</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary">Cetak Laporan</button>
+                            </div>
+                        </form>
+                    </div>
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->

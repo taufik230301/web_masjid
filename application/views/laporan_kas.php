@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Laporan Kas
+    </title>
     <style>
     td {
         padding-top: 20px;
@@ -27,6 +28,12 @@
         border: 1px solid black;
     }
     </style>
+    <?php 
+        function rupiah($angka) {
+    $hasil = 'Rp ' . number_format($angka, 2, ",", ".");
+    return $hasil;
+    } 
+    ?>
 </head>
 
 <body>
@@ -56,13 +63,19 @@
             <tr>
                 <td style="width: 198.875px;"><?=$id?></td>
                 <td style="width: 198.875px;"><?=$jenis_kas?></td>
-                <td style="width: 198.875px;"><?=$nominal?></td>
+                <td style="width: 198.875px;"><?=rupiah($nominal)?></td>
                 <td style="width: 198.875px;"><?=$keterangan_kas?></td>
                 <td style="width: 198.9px;"><?=$tanggal_transaksi?></td>
             </tr>
             <?php endforeach;?>
         </tbody>
+
+
     </table>
+
+    <p>Total Pemasukan : <?=rupiah($kas_debit['nominal'])?></p>
+    <p>Total Pengeluaran : <?=rupiah($kas_kredit['nominal'])?></p>
+
 </body>
 
 </html>

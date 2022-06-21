@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2022 at 02:41 PM
+-- Generation Time: Jun 21, 2022 at 09:47 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -80,7 +80,8 @@ CREATE TABLE `iuran` (
 --
 
 INSERT INTO `iuran` (`id_iuran`, `bulan`, `tahun`, `tanggal_iuran`, `jumlah_iuran`, `id_user`) VALUES
-(2, 'Januari', '2022', '2020-12-12', 900000, '7e28509b66c00e27a9d08a4cf61eb603');
+(2, 'Januari', '2022', '2020-12-12', 900000, '7e28509b66c00e27a9d08a4cf61eb603'),
+(5, 'Februari', '2019', '2022-06-09', 10000000, '9c29ff6121686a7bd4c68c4daf8203c6');
 
 -- --------------------------------------------------------
 
@@ -102,7 +103,9 @@ CREATE TABLE `kas` (
 
 INSERT INTO `kas` (`id_kas`, `jenis_kas`, `nominal`, `keterangan_kas`, `tanggal_transaksi`) VALUES
 (1, 'Debit', 1000000, 'Sumbangan haji alem\r\n', '2022-06-19'),
-(6, 'Debit', 1000000000, 'Sumbangan bos taufik\r\n', '2022-06-19');
+(6, 'Debit', 1000000000, 'Sumbangan bos taufik\r\n', '2022-06-19'),
+(7, 'Debit', 100000, 'Sumbangan kematian\r\n', '2022-06-20'),
+(8, 'Kredit', 300000, 'Membeli kursi', '2022-06-20');
 
 -- --------------------------------------------------------
 
@@ -202,8 +205,8 @@ CREATE TABLE `user_detail` (
 INSERT INTO `user_detail` (`id_user_detail`, `nama_lengkap`, `jabatan`, `no_kk`, `no_ktp`, `jenis_kelamin`, `agama`, `no_hp`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `foto_kk`, `id_status_verifikasi`, `tanggal_registered`) VALUES
 ('1d7435860716a08092681637d39a826d', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2022-06-15'),
 ('5a370c106f2703961690cf8bc4f93836', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2022-06-15'),
-('7e28509b66c00e27a9d08a4cf61eb603', 'Taufiiqulhakim 10219021', 'Anggota Biasa', '12', '12', 'L', 'Islam', '+62812781728', 'Jl. Sekip', 'Palembang', '2022-06-22', '159635db729a4b819d92718a41e05c6f_kk.png', 4, '2022-06-17'),
-('9c29ff6121686a7bd4c68c4daf8203c6', 'Taufiiqulhakim 10219021', 'Anggota Biasa', '12', '12', 'L', 'Islam', 'Taufiiqulhakim 10219021', 'Jl. Sekip', 'Palembang', '2001-12-12', 'a18256a61215f6c8d2678be460aeee6a_kk.png', 4, '2022-06-18'),
+('7e28509b66c00e27a9d08a4cf61eb603', 'Taufiiqulhakim', 'Anggota Biasa', '12', '12', 'L', 'Islam', '+62812781728', 'Jl. Sekip', 'Palembang', '2022-06-22', '159635db729a4b819d92718a41e05c6f_kk.png', 4, '2022-06-17'),
+('9c29ff6121686a7bd4c68c4daf8203c6', 'Rezki', 'Anggota Biasa', '12', '12', 'L', 'Islam', '081271828172', 'Jl. Sekip', 'Palembang', '2001-12-12', 'a18256a61215f6c8d2678be460aeee6a_kk.png', 4, '2022-06-18'),
 ('c6b4baf1dee319638f342dfc893cf4bb', 'Rian', 'Sekre', '12', '12', 'L', 'Islam', 'Rian', 'Jl. Sekip', 'Palembang', '2022-06-23', '05a108188fec06cc861a0f7718bcaa81_kk.png', 1, '2022-06-17');
 
 -- --------------------------------------------------------
@@ -304,13 +307,13 @@ ALTER TABLE `inventory`
 -- AUTO_INCREMENT for table `iuran`
 --
 ALTER TABLE `iuran`
-  MODIFY `id_iuran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_iuran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kas`
 --
 ALTER TABLE `kas`
-  MODIFY `id_kas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_kas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `kematian`

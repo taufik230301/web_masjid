@@ -96,11 +96,8 @@
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active">Kas</li>
                             </ol>
-                        </div><!-- /.col -->
-                        <button type="button" class="btn btn-primary ml-2 mt-3" data-toggle="modal"
-                            data-target="#exampleModal">
-                            Tambah Data
-                        </button>
+                        </div>
+                        
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
@@ -149,9 +146,9 @@
                                                 <td><?=rupiah($nominal)?></td>
                                                 <td><?=$keterangan_kas?></td>
                                                 <td><?=$tanggal_transaksi?></td>
-                                                
+
                                             </tr>
-                                           
+
                                             <?php endforeach?>
                                         </tbody>
 
@@ -171,7 +168,7 @@
                     </div>
                     <!-- /.row -->
                 </div>
-               
+
             </section>
             <!-- /.content -->
             <!-- /.content -->

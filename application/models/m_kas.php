@@ -51,9 +51,30 @@ class M_kas extends CI_Model
         return $hasil;
     }
 
+    public function read_all_kas_by_date($end, $start)
+    {
+        $hasil=$this->db->query("SELECT * FROM kas WHERE tanggal_transaksi between '$start'
+        AND '$end'");
+        return $hasil;
+    }
+
+    public function read_all_kas_kredit_by_date($end, $start)
+    {
+        $hasil=$this->db->query("SELECT SUM(nominal) as nominal FROM kas WHERE jenis_kas='Kredit' AND tanggal_transaksi between '$start'
+        AND '$end'");
+        return $hasil;
+    }
+
     public function read_all_kas_kredit()
     {
         $hasil=$this->db->query("SELECT SUM(nominal) as nominal FROM kas WHERE jenis_kas='Kredit'");
+        return $hasil;
+    }
+
+    public function read_all_kas_debit_by_date($end, $start)
+    {
+        $hasil=$this->db->query("SELECT SUM(nominal) as nominal FROM kas WHERE jenis_kas='Debit' AND tanggal_transaksi between '$start'
+        AND '$end'");
         return $hasil;
     }
 
