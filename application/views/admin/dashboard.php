@@ -4,6 +4,12 @@
 <head>
     <?php $this->load->view('admin/components/header');?>
 </head>
+<?php 
+        function rupiah($angka) {
+    $hasil = 'Rp ' . number_format($angka, 2, ",", ".");
+    return $hasil;
+    } 
+    ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <?php if ($this->session->flashdata('success_login')){ ?>
@@ -58,9 +64,9 @@
                             <!-- small box -->
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>150</h3>
+                                    <h4><?=rupiah($kas_debit['nominal']-$kas_kredit['nominal']) ?></h4>
 
-                                    <p>Kas</p>
+                                    <p>Total Kas</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-book"></i>
@@ -74,7 +80,7 @@
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>53</h3>
+                                    <h4><?=rupiah($iuran['nominal']) ?></h4>
 
                                     <p>Iuran</p>
                                 </div>
@@ -172,13 +178,7 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-            All rights reserved.
-            <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 3.2.0
-            </div>
-        </footer>
+       
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

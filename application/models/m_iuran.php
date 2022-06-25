@@ -43,6 +43,10 @@ class M_iuran extends CI_Model
     }
 
    
-
+    public function sum_all_iuran()
+    {
+        $hasil=$this->db->query("SELECT SUM(jumlah_iuran) as nominal FROM iuran");
+        return $hasil;
+    }
 
 }

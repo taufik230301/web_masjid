@@ -73,9 +73,9 @@ class Cetak extends CI_Controller {
             $data['bulan'] = "Desember";
 		}
 		
-        $data['kas'] = $this->m_kas->read_all_kas_by_date($end, $start)->result_array();
-        $data['kas_debit'] = $this->m_kas->read_all_kas_debit_by_date($end, $start)->row_array();
-        $data['kas_kredit'] = $this->m_kas->read_all_kas_kredit_by_date($end, $start)->row_array();
+        $data['kas'] = $this->m_kas->sum_all_kas_by_date($end, $start)->result_array();
+        $data['kas_debit'] = $this->m_kas->sum_all_kas_debit_by_date($end, $start)->row_array();
+        $data['kas_kredit'] = $this->m_kas->sum_all_kas_kredit_by_date($end, $start)->row_array();
 	
 		$this->load->library('pdf');
 	

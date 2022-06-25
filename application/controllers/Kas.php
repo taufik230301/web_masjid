@@ -14,8 +14,8 @@ class Kas extends CI_Controller {
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 			$data['kas'] = $this->m_kas->read_all_kas()->result_array();
-			$data['kas_kredit'] = $this->m_kas->read_all_kas_kredit()->row_array();
-			$data['kas_debit'] = $this->m_kas->read_all_kas_debit()->row_array();
+			$data['kas_kredit'] = $this->m_kas->sum_all_kas_kredit()->row_array();
+			$data['kas_debit'] = $this->m_kas->sum_all_kas_debit()->row_array();
 			
 			$this->load->view('admin/kas', $data);
 
@@ -90,8 +90,8 @@ class Kas extends CI_Controller {
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
 			
 			$data['kas'] = $this->m_kas->read_all_kas()->result_array();
-			$data['kas_kredit'] = $this->m_kas->read_all_kas_kredit()->row_array();
-			$data['kas_debit'] = $this->m_kas->read_all_kas_debit()->row_array();
+			$data['kas_kredit'] = $this->m_kas->sum_all_kas_kredit()->row_array();
+			$data['kas_debit'] = $this->m_kas->sum_all_kas_debit()->row_array();
 			$this->load->view('bendahara/kas', $data);
 
 		}else{
@@ -164,8 +164,8 @@ class Kas extends CI_Controller {
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
 			$data['anggota'] = $this->m_user->read_all_anggota_by_id_user($this->session->userdata('id_user'))->row_array();
 			$data['kas'] = $this->m_kas->read_all_kas()->result_array();
-			$data['kas_kredit'] = $this->m_kas->read_all_kas_kredit()->row_array();
-			$data['kas_debit'] = $this->m_kas->read_all_kas_debit()->row_array();
+			$data['kas_kredit'] = $this->m_kas->sum_all_kas_kredit()->row_array();
+			$data['kas_debit'] = $this->m_kas->sum_all_kas_debit()->row_array();
 			$this->load->view('anggota/kas', $data);
 
 		}else{
