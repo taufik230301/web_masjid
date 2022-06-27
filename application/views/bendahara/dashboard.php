@@ -74,17 +74,16 @@
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
-                        <!-- ./col -->
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h4><?=rupiah($iuran['nominal']) ?></h4>
+                                    <h4><?=rupiah($kas_debit['nominal']) ?></h4>
 
-                                    <p>Iuran</p>
+                                    <p>Total Pemasukan Kas</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="fas fa-columns"></i>
+                                    <i class="fas fa-book"></i>
                                 </div>
                                 <a href="#" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
@@ -92,14 +91,14 @@
                         </div>
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
-                            <div class="small-box bg-warning">
+                            <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3><?=$total_berita['total_berita']?></h3>
+                                    <h4><?=rupiah($kas_kredit['nominal']) ?></h4>
 
-                                    <p>Info Berita</p>
+                                    <p>Total Pengeluaran Kas</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="fas fa-info"></i>
+                                    <i class="fas fa-book"></i>
                                 </div>
                                 <a href="#" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
@@ -110,60 +109,12 @@
                             <!-- small box -->
                             <div class="small-box bg-primary">
                                 <div class="inner">
-                                    <h3><?=$total_anggota_kematian['total_anggota_kematian']?></h3>
+                                    <h4><?=rupiah($iuran['nominal']) ?></h4>
 
-                                    <p>Info Kematian</p>
+                                    <p>Iuran</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-person"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-danger">
-                                <div class="inner">
-                                    <h3><?=$total_pengurus['total_pengurus']?></h3>
-
-                                    <p>Pengurus</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-secondary">
-                                <div class="inner">
-                                    <h3><?=$total_anggota['total_anggota']?></h3>
-
-                                    <p>Anggota</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3><?=$total_inventory['total_inventory']?></h3>
-
-                                    <p>Inventory</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-info"></i>
+                                    <i class="fas fa-columns"></i>
                                 </div>
                                 <a href="#" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>

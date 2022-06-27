@@ -10,8 +10,8 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/Loading.png"
-                alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="<?=base_Url();?>assets/admin_lte/dist/img/Loading.png" alt="AdminLTELogo"
+                height="60" width="60">
         </div>
 
         <?php $this->load->view('anggota/components/navbar');?>
@@ -45,7 +45,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-                           
+
                             <!-- /.card -->
 
                             <div class="card">
@@ -67,18 +67,34 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                            $id = 0;
+                                            foreach($inventory as $i)
+                                            :
+                                            $id++;
+                                            $id_inventory = $i['id_inventory'];
+                                            $nama_inventory = $i['nama_inventory'];
+                                            $merk = $i['merk'];
+                                            $satuan = $i['satuan'];
+                                            $jumlah = $i['jumlah'];
+                                            $kondisi_barang = $i['kondisi_barang'];
+                                            $tanggal_masuk = $i['tanggal_masuk'];
+                                          
+
+                                            ?>
                                             <tr>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0
+                                                <td><?=$id?></td>
+                                                <td><?=$nama_inventory?>
                                                 </td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                                <td>X</td>
-                                                <td>X</td>
+                                                <td><?=$merk?></td>
+                                                <td> <?=$satuan?></td>
+                                                <td><?=$jumlah?></td>
+                                                <td><?=$kondisi_barang?></td>
+                                                <td><?=$tanggal_masuk?></td>
                                             </tr>
+                                            <?php endforeach;?>
                                         </tbody>
-                                       
+
                                     </table>
                                 </div>
                                 <!-- /.card-body -->
@@ -95,7 +111,7 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-       
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
