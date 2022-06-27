@@ -88,5 +88,27 @@ class Kematian extends CI_Controller {
         }
 
 	}
+
+	public function view_anggota()
+	{
+
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
+			
+			$data['anggota'] = $this->m_user->read_all_anggota_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['anggota_not_kematian'] = $this->m_user->read_all_anggota_not_kematian()->result_array();
+			$data['anggota_kematian'] = $this->m_user->read_all_anggota_kematian()->result_array();
+			
+			// echo var_dump($data);
+			// die();
+			$this->load->view('anggota/kematian', $data);
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
+
+	} 
 	
 }
