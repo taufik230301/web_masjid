@@ -89,6 +89,12 @@
                                  <p>Kematian</p>
                              </a>
                          </li>
+                         <li class="nav-item">
+                             <a href="<?=base_url();?>Berita/view_anggota" class="nav-link">
+                                 <i class="nav-icon fas fa-table"></i>
+                                 <p>Berita</p>
+                             </a>
+                         </li>
                      </ul>
          </nav>
      </div>

@@ -133,6 +133,12 @@ class Berita extends CI_Controller {
         
 			}
 	}
+
+	public function view_anggota()
+	{
+		$data['berita'] = $this->m_berita->read_all_berita()->result_array();
+		$this->load->view('anggota/berita', $data);
+    }
    
 	
 }
