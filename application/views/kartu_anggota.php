@@ -20,8 +20,8 @@
                 <td style="width: 580px; text-align: center; height: 113.575px; border: none;">
                     <p style="text-align: center; margin-bottom: -10px;">KARTU ANGGOTA PENGURUS MASJID AL-IKMAL</p>
                     <p style="margin-bottom: -10px;">BADAN PENGURUS HARIAN MASJID AL-IKMAL</p>
-                    <p style="margin-bottom: -10px;">KECAMATAN BLABLABAL</p>
-                    <p style="margin-bottom: -10px;">KELURAHAN BLA BLA</p>
+                    <p style="margin-bottom: -10px;">KECAMATAN Bukit Kecil</p>
+                    <p style="margin-bottom: -10px;">KELURAHAN 26 Ilir</p>
                 </td>
             </tr>
         </tbody>

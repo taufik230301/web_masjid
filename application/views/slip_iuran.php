@@ -31,8 +31,8 @@
 
 <body>
     <h4 style="text-align: center; margin-bottom:-15px; margin-top:-15px;">BADAN PENGURUS HARIAN MASJID AL-IKMAL</h4>
-    <h4 style="text-align: center; margin-bottom:-15px;">KECAMATAN BLABLABAL</h4>
-    <p style="text-align: center; margin-bottom:-15px;">KELURAHAN BLA BLA</p>
+    <h4 style="text-align: center; margin-bottom:-15px;">KECAMATAN Bukit Kecil</h4>
+    <p style="text-align: center; margin-bottom:-15px;">KELURAHAN 26 Ilir</p>
     <p style="text-align: center; margin-bottom:65px;">SLIP IURAN BULANAN ANGGOTA</p>
     <p style="text-align: left; margin-bottom:-15px; margin-left:70px;">Nama Anggota : <?=$anggota_iuran['0']['nama_lengkap']?></p>
     <p style="text-align: left; margin-bottom:-15px; margin-left:70px;">Alamat : <?=$anggota_iuran['0']['alamat']?></p>
