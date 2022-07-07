@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view('admin/components/header');?>
+    <?php $this->load->view('bendahara/components/header');?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -41,9 +41,9 @@
                 height="60" width="60">
         </div>
 
-        <?php $this->load->view('admin/components/navbar');?>
+        <?php $this->load->view('bendahara/components/navbar');?>
 
-        <?php $this->load->view('admin/components/sidebar');?>
+        <?php $this->load->view('bendahara/components/sidebar');?>
 
 
 
@@ -77,8 +77,9 @@
 
                             <!-- /.card -->
 
-                            <form action="<?=base_url();?>Settings/settings_account_admin" method="POST">
-                            <input type="text" name="id_user" value="<?=$this->session->userdata('id_user')?>" hidden>
+                            <form action="<?=base_url();?>Settings/settings_account_bendahara" method="POST">
+                                <input type="text" name="id_user" value="<?=$this->session->userdata('id_user')?>"
+                                    hidden>
                                 <div class="form-group">
                                     <label for="username">Username</label>
                                     <input type="text" class="form-control" id="username" name="username"
@@ -117,7 +118,7 @@
     </div>
     <!-- ./wrapper -->
 
-    <?php $this->load->view('admin/components/js');?>
+    <?php $this->load->view('bendahara/components/js');?>
 </body>
 
 </html>

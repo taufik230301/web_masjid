@@ -94,7 +94,7 @@
 
                          <li class="nav-item">
                              <a href="<?=base_url();?>Settings/view_admin" class="nav-link">
-                                 <i class="nav-icon fas fa-th"></i>
+                                 <i class="nav-icon fas fa-cog"></i>
                                  <p>Settings</p>
                              </a>
                          </li>

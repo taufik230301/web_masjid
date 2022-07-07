@@ -95,6 +95,13 @@
                                  <p>Berita</p>
                              </a>
                          </li>
+                         <li class="nav-item">
+                             <a href="<?=base_url();?>Settings/view_anggota" class="nav-link">
+                                 <i class="nav-icon fas fa-cog"></i>
+                                 <p>Settings</p>
+                             </a>
+                         </li>
+                        
                      </ul>
          </nav>
      </div>
