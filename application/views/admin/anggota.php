@@ -291,7 +291,9 @@
                                                             </a>
                                                         </div>
                                                     </div>
+                                                    
                                                 </td>
+                                                
                                                 <!-- Modal Ubah Data Anggota-->
                                                 <div class="modal fade" id="ubah_anggota<?=$id_user?>" tabindex="-1"
                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
