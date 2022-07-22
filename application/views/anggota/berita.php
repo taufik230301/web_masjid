@@ -84,12 +84,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Info Kematian</h1>
+                            <h1 class="m-0">Info Berita</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Info Kematian</li>
+                                <li class="breadcrumb-item active">Info Berita</li>
                             </ol>
                         </div>
 
@@ -97,6 +97,13 @@
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
+            <?php 
+            if($berita == null){
+                ?>
+            <h1 style="margin-left:10px;">Belum Ada Berita</h1>
+            <?php   
+            } else {
+            ?>
 
             <!-- Main content -->
             <section class="content">
@@ -142,6 +149,7 @@
             </section>
             <!-- /.content -->
             <!-- /.content -->
+            <?php } ?>
         </div>
 
 

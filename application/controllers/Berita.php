@@ -7,6 +7,7 @@ class Berita extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('m_berita');
+		$this->load->model('m_user');
 	}
 
 	public function view_admin()
@@ -137,6 +138,7 @@ class Berita extends CI_Controller {
 	public function view_anggota()
 	{
 		$data['berita'] = $this->m_berita->read_all_berita()->result_array();
+		$data['anggota'] = $this->m_user->read_all_anggota_by_id_user($this->session->userdata('id_user'))->row_array();
 		$this->load->view('anggota/berita', $data);
     }
    
